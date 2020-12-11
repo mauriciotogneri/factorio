@@ -27,7 +27,7 @@ class Grid {
     }
 
     render() {
-        this.renderBackfield()
+        this.renderBackground()
 
         this.map.fields.forEach(field => {
             this.renderField(field)
@@ -42,7 +42,7 @@ class Grid {
         })
     }
 
-    renderBackfield() {
+    renderBackground() {
         this.canvas.fillStyle = '#1e262c'
         this.canvas.fillRect(0, 0, this.width, this.height)
     }
