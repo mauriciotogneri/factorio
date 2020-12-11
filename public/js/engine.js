@@ -6,6 +6,6 @@ class Engine {
     }
 
     update(delta) {
-        console.log(delta)
+        //console.log(delta)
     }
 }

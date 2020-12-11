@@ -1,4 +1,4 @@
-class Node {
+class Building {
     x = 0
     y = 0
     type = ''

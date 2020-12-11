@@ -1,22 +1,21 @@
 class Map {
     fields = []
     resources = []
-    nodes = []
-
-    nodesHorizontal = 0
-    nodesVertical = 0
+    buildings = []
+    width = 0
+    height = 0
 
     load() {
         const loadedMap = defaultMap()
 
-        this.nodesHorizontal = loadedMap.width
-        this.nodesVertical = loadedMap.height
+        this.width = loadedMap.width
+        this.height = loadedMap.height
 
-        loadedMap.nodes.forEach(node => {
-            this.nodes.push(new Node(
-                node.x,
-                node.y,
-                node.type
+        loadedMap.buildings.forEach(building => {
+            this.buildings.push(new Building(
+                building.x,
+                building.y,
+                building.type
             ))
         })
 
@@ -163,7 +162,7 @@ function defaultMap() {
             { x: 1, y: 8, type: 'coal', value: 1000 },
             { x: 2, y: 8, type: 'coal', value: 1000 }
         ],
-        nodes: [
+        buildings: [
             { x: 5, y: 5, type: 'headquarters' },
             { x: 2, y: 7, type: 'coal.mine' },
             { x: 3, y: 7, type: 'conveyor' },
