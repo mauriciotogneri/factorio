@@ -28,8 +28,18 @@ class Grid {
 
     render() {
         this.renderBackfield()
-        this.renderFields(this.map.fields)
-        this.renderNodes(this.map.nodes)
+
+        this.map.fields.forEach(field => {
+            this.renderNode(field)
+        })
+
+        this.map.resources.forEach(resource => {
+            this.renderResource(resource)
+        })
+
+        this.map.nodes.forEach(node => {
+            this.renderField(node)
+        })
     }
 
     renderBackfield() {
@@ -37,28 +47,7 @@ class Grid {
         this.canvas.fillRect(0, 0, this.width, this.height)
     }
 
-    renderFields(fields) {
-        fields.forEach(field => {
-            this.renderNode(field)
-        })
-    }
-
-    renderNodes(nodes) {
-        nodes.forEach(node => {
-            this.renderField(node)
-        })
-    }
-
     renderNode(node) {
-        /*this.canvas.strokeStyle = '#57595b'
-        this.canvas.lineWidth = 0.1
-        this.canvas.strokeRect(
-            this.nodeX(node),
-            this.nodeY(node),
-            this.cellSize,
-            this.cellSize
-        )*/
-
         let image = document.getElementById('img.' + node.type)
         this.canvas.drawImage(image,
             this.tileX(node),
@@ -73,6 +62,16 @@ class Grid {
         this.canvas.drawImage(image,
             this.tileX(field),
             this.tileY(field),
+            this.cellSize,
+            this.cellSize
+        )
+    }
+
+    renderResource(resource) {
+        let image = document.getElementById('img.' + resource.type)
+        this.canvas.drawImage(image,
+            this.tileX(resource),
+            this.tileY(resource),
             this.cellSize,
             this.cellSize
         )

@@ -1,6 +1,8 @@
 class Map {
     fields = []
+    resources = []
     nodes = []
+
     nodesHorizontal = 0
     nodesVertical = 0
 
@@ -10,25 +12,30 @@ class Map {
         this.nodesHorizontal = loadedMap.width
         this.nodesVertical = loadedMap.height
 
-        for (let i = 0; i < loadedMap.nodes.length; i++) {
-            let node = loadedMap.nodes[i]
-
+        loadedMap.nodes.forEach(node => {
             this.nodes.push(new Node(
                 node.x,
                 node.y,
                 node.type
             ))
-        }
+        })
 
-        for (let i = 0; i < loadedMap.ground.length; i++) {
-            let field = loadedMap.ground[i]
-
+        loadedMap.fields.forEach(field => {
             this.fields.push(new Field(
                 field.x,
                 field.y,
                 field.type
             ))
-        }
+        })
+
+        loadedMap.resources.forEach(resource => {
+            this.resources.push(new Resource(
+                resource.x,
+                resource.y,
+                resource.type,
+                resource.value
+            ))
+        })
     }
 }
 
@@ -37,7 +44,7 @@ function defaultMap() {
         version: '1',
         width: 10,
         height: 10,
-        ground: [
+        fields: [
             { x: 0, y: 0, type: 'grass' },
             { x: 1, y: 0, type: 'grass' },
             { x: 2, y: 0, type: 'grass' },
@@ -147,6 +154,14 @@ function defaultMap() {
             { x: 7, y: 9, type: 'grass' },
             { x: 8, y: 9, type: 'grass' },
             { x: 9, y: 9, type: 'grass' }
+        ],
+        resources: [
+            { x: 1, y: 6, type: 'coal', value: 1000 },
+            { x: 2, y: 6, type: 'coal', value: 1000 },
+            { x: 1, y: 7, type: 'coal', value: 1000 },
+            { x: 2, y: 7, type: 'coal', value: 1000 },
+            { x: 1, y: 8, type: 'coal', value: 1000 },
+            { x: 2, y: 8, type: 'coal', value: 1000 }
         ],
         nodes: [
             { x: 5, y: 5, type: 'headquarters' },

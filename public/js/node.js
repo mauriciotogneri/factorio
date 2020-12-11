@@ -4,7 +4,6 @@ class Node {
     type = ''
 
     static TYPE_CONVEYOR = 'conveyor'
-    static TYPE_COAL = 'coal'
     static TYPE_COAL_MINE = 'coal.mine'
     static TYPE_HEADQUARTERS = 'headquarters'
 
