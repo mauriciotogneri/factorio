@@ -12,4 +12,13 @@ class Resource {
         this.type = type
         this.value = value
     }
+
+    static fromJson(json) {
+        return new Resource(
+            json.x,
+            json.y,
+            json.type,
+            json.value
+        )
+    }
 }

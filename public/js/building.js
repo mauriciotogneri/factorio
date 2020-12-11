@@ -12,4 +12,12 @@ class Building {
         this.y = y
         this.type = type
     }
+
+    static fromJson(json) {
+        return new Building(
+            json.x,
+            json.y,
+            json.type
+        )
+    }
 }

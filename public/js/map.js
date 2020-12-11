@@ -11,30 +11,9 @@ class Map {
         this.width = loadedMap.width
         this.height = loadedMap.height
 
-        loadedMap.buildings.forEach(building => {
-            this.buildings.push(new Building(
-                building.x,
-                building.y,
-                building.type
-            ))
-        })
-
-        loadedMap.fields.forEach(field => {
-            this.fields.push(new Field(
-                field.x,
-                field.y,
-                field.type
-            ))
-        })
-
-        loadedMap.resources.forEach(resource => {
-            this.resources.push(new Resource(
-                resource.x,
-                resource.y,
-                resource.type,
-                resource.value
-            ))
-        })
+        this.buildings = loadedMap.buildings.map(Building.fromJson)
+        this.fields = loadedMap.fields.map(Field.fromJson)
+        this.resources = loadedMap.resources.map(Resource.fromJson)
     }
 }
 
