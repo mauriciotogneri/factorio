@@ -1,0 +1,47 @@
+<html>
+
+<head>
+	<title>Factorio</title>
+	<style type='text/css'>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+	<script src='js/grid.js'></script>
+	<script src='js/node.js'></script>
+	<script src='js/map.js'></script>
+	<script src='js/engine.js'></script>
+	<script>
+		let map = null
+		let engine = null
+		let grid = null
+		let lastTimestamp = 0
+
+		function init() {
+			map = new Map()
+			engine = new Engine(map)
+
+			const canvas = document.getElementById('canvas')
+			canvas.width = document.body.clientWidth
+			canvas.height = document.body.clientHeight
+			grid = new Grid(canvas, map)
+			grid.render()
+
+			window.requestAnimationFrame(step)
+		}
+
+		function step(timestamp) {
+			engine.update(timestamp - lastTimestamp)
+			lastTimestamp = timestamp
+			window.requestAnimationFrame(step)
+		}
+	</script>
+</head>
+
+<body onload='init()'>
+	<canvas id='canvas'></canvas>
+	<img id='img.tile' src='img/tile.jpg' style='display: none' />
+</body>
+
+</html>
