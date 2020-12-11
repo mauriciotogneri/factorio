@@ -43,7 +43,7 @@ class Grid {
     }
 
     renderBackground() {
-        this.canvas.fillStyle = '#1e262c'
+        this.canvas.fillStyle = '#111111'
         this.canvas.fillRect(0, 0, this.width, this.height)
     }
 
