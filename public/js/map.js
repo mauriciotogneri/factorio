@@ -21,9 +21,8 @@ class Map
 
 function defaultMap()
 {
-    const width = 20
+    const width = 30
     const height = 20
-
     const fields = []
 
     for (let x = 0; x < width; x++)
