@@ -1,11 +1,13 @@
-class Map {
+class Map
+{
     fields = []
     resources = []
     buildings = []
     width = 0
     height = 0
 
-    load() {
+    load()
+    {
         const loadedMap = defaultMap()
 
         this.width = loadedMap.width
@@ -17,14 +19,17 @@ class Map {
     }
 }
 
-function defaultMap() {
+function defaultMap()
+{
     const width = 20
     const height = 20
 
     const fields = []
 
-    for (let x = 0; x < width; x++) {
-        for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++)
+    {
+        for (let y = 0; y < height; y++)
+        {
             fields.push({ x: x, y: y, type: 'grass' })
         }
     }

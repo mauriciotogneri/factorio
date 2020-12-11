@@ -1,11 +1,14 @@
-class Engine {
+class Engine
+{
     map
 
-    constructor(map) {
+    constructor(map)
+    {
         this.map = map
     }
 
-    update(delta) {
+    update(delta)
+    {
         //console.log(delta)
     }
 }

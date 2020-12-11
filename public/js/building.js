@@ -1,4 +1,5 @@
-class Building {
+class Building
+{
     x = 0
     y = 0
     type = ''
@@ -7,13 +8,15 @@ class Building {
     static TYPE_COAL_MINE = 'coal.mine'
     static TYPE_HEADQUARTERS = 'headquarters'
 
-    constructor(x, y, type) {
+    constructor(x, y, type)
+    {
         this.x = x
         this.y = y
         this.type = type
     }
 
-    static fromJson(json) {
+    static fromJson(json)
+    {
         return new Building(
             json.x,
             json.y,
