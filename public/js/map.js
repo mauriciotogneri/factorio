@@ -1,15 +1,162 @@
 class Map {
+    fields = []
     nodes = []
+    nodesHorizontal = 0
+    nodesVertical = 0
 
-    static NODES_HORIZONTAL = 35
-    static NODES_VERTICAL = 25
+    load() {
+        const loadedMap = defaultMap()
 
-    constructor() {
-        for (let x = 0; x < Map.NODES_HORIZONTAL; x++) {
-            for (let y = 0; y < Map.NODES_VERTICAL; y++) {
-                let node = new Node(x, y)
-                this.nodes.push(node)
-            }
+        this.nodesHorizontal = loadedMap.width
+        this.nodesVertical = loadedMap.height
+
+        for (let i = 0; i < loadedMap.nodes.length; i++) {
+            let node = loadedMap.nodes[i]
+
+            this.nodes.push(new Node(
+                node.x,
+                node.y,
+                node.type
+            ))
+        }
+
+        for (let i = 0; i < loadedMap.ground.length; i++) {
+            let field = loadedMap.ground[i]
+
+            this.fields.push(new Field(
+                field.x,
+                field.y,
+                field.type
+            ))
         }
     }
+}
+
+function defaultMap() {
+    const json = {
+        version: '1',
+        width: 10,
+        height: 10,
+        ground: [
+            { x: 0, y: 0, type: 'grass' },
+            { x: 1, y: 0, type: 'grass' },
+            { x: 2, y: 0, type: 'grass' },
+            { x: 3, y: 0, type: 'grass' },
+            { x: 4, y: 0, type: 'grass' },
+            { x: 5, y: 0, type: 'grass' },
+            { x: 6, y: 0, type: 'grass' },
+            { x: 7, y: 0, type: 'grass' },
+            { x: 8, y: 0, type: 'grass' },
+            { x: 9, y: 0, type: 'grass' },
+
+            { x: 0, y: 1, type: 'grass' },
+            { x: 1, y: 1, type: 'grass' },
+            { x: 2, y: 1, type: 'grass' },
+            { x: 3, y: 1, type: 'grass' },
+            { x: 4, y: 1, type: 'grass' },
+            { x: 5, y: 1, type: 'grass' },
+            { x: 6, y: 1, type: 'grass' },
+            { x: 7, y: 1, type: 'grass' },
+            { x: 8, y: 1, type: 'grass' },
+            { x: 9, y: 1, type: 'grass' },
+
+            { x: 0, y: 2, type: 'grass' },
+            { x: 1, y: 2, type: 'grass' },
+            { x: 2, y: 2, type: 'grass' },
+            { x: 3, y: 2, type: 'grass' },
+            { x: 4, y: 2, type: 'grass' },
+            { x: 5, y: 2, type: 'grass' },
+            { x: 6, y: 2, type: 'grass' },
+            { x: 7, y: 2, type: 'grass' },
+            { x: 8, y: 2, type: 'grass' },
+            { x: 9, y: 2, type: 'grass' },
+
+            { x: 0, y: 3, type: 'grass' },
+            { x: 1, y: 3, type: 'grass' },
+            { x: 2, y: 3, type: 'grass' },
+            { x: 3, y: 3, type: 'grass' },
+            { x: 4, y: 3, type: 'grass' },
+            { x: 5, y: 3, type: 'grass' },
+            { x: 6, y: 3, type: 'grass' },
+            { x: 7, y: 3, type: 'grass' },
+            { x: 8, y: 3, type: 'grass' },
+            { x: 9, y: 3, type: 'grass' },
+
+            { x: 0, y: 4, type: 'grass' },
+            { x: 1, y: 4, type: 'grass' },
+            { x: 2, y: 4, type: 'grass' },
+            { x: 3, y: 4, type: 'grass' },
+            { x: 4, y: 4, type: 'grass' },
+            { x: 5, y: 4, type: 'grass' },
+            { x: 6, y: 4, type: 'grass' },
+            { x: 7, y: 4, type: 'grass' },
+            { x: 8, y: 4, type: 'grass' },
+            { x: 9, y: 4, type: 'grass' },
+
+            { x: 0, y: 5, type: 'grass' },
+            { x: 1, y: 5, type: 'grass' },
+            { x: 2, y: 5, type: 'grass' },
+            { x: 3, y: 5, type: 'grass' },
+            { x: 4, y: 5, type: 'grass' },
+            { x: 5, y: 5, type: 'grass' },
+            { x: 6, y: 5, type: 'grass' },
+            { x: 7, y: 5, type: 'grass' },
+            { x: 8, y: 5, type: 'grass' },
+            { x: 9, y: 5, type: 'grass' },
+
+            { x: 0, y: 6, type: 'grass' },
+            { x: 1, y: 6, type: 'grass' },
+            { x: 2, y: 6, type: 'grass' },
+            { x: 3, y: 6, type: 'grass' },
+            { x: 4, y: 6, type: 'grass' },
+            { x: 5, y: 6, type: 'grass' },
+            { x: 6, y: 6, type: 'grass' },
+            { x: 7, y: 6, type: 'grass' },
+            { x: 8, y: 6, type: 'grass' },
+            { x: 9, y: 6, type: 'grass' },
+
+            { x: 0, y: 7, type: 'grass' },
+            { x: 1, y: 7, type: 'grass' },
+            { x: 2, y: 7, type: 'grass' },
+            { x: 3, y: 7, type: 'grass' },
+            { x: 4, y: 7, type: 'grass' },
+            { x: 5, y: 7, type: 'grass' },
+            { x: 6, y: 7, type: 'grass' },
+            { x: 7, y: 7, type: 'grass' },
+            { x: 8, y: 7, type: 'grass' },
+            { x: 9, y: 7, type: 'grass' },
+
+            { x: 0, y: 8, type: 'grass' },
+            { x: 1, y: 8, type: 'grass' },
+            { x: 2, y: 8, type: 'grass' },
+            { x: 3, y: 8, type: 'grass' },
+            { x: 4, y: 8, type: 'grass' },
+            { x: 5, y: 8, type: 'grass' },
+            { x: 6, y: 8, type: 'grass' },
+            { x: 7, y: 8, type: 'grass' },
+            { x: 8, y: 8, type: 'grass' },
+            { x: 9, y: 8, type: 'grass' },
+
+            { x: 0, y: 9, type: 'grass' },
+            { x: 1, y: 9, type: 'grass' },
+            { x: 2, y: 9, type: 'grass' },
+            { x: 3, y: 9, type: 'grass' },
+            { x: 4, y: 9, type: 'grass' },
+            { x: 5, y: 9, type: 'grass' },
+            { x: 6, y: 9, type: 'grass' },
+            { x: 7, y: 9, type: 'grass' },
+            { x: 8, y: 9, type: 'grass' },
+            { x: 9, y: 9, type: 'grass' }
+        ],
+        nodes: [
+            { x: 5, y: 5, type: 'headquarters' },
+            { x: 2, y: 7, type: 'coal.mine' },
+            { x: 3, y: 7, type: 'conveyor' },
+            { x: 4, y: 7, type: 'conveyor' },
+            { x: 5, y: 7, type: 'conveyor' },
+            { x: 5, y: 6, type: 'conveyor' },
+        ]
+    }
+
+    return json
 }

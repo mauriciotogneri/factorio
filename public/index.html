@@ -7,6 +7,7 @@
     <script src='js/node.js' type='text/javascript'></script>
     <script src='js/map.js' type='text/javascript'></script>
     <script src='js/engine.js' type='text/javascript'></script>
+    <script src='js/field.js' type='text/javascript'></script>
     <script>
         let map = null
         let engine = null
@@ -15,6 +16,7 @@
 
         function init() {
             map = new Map()
+            map.load()
             engine = new Engine(map)
 
             const canvas = document.getElementById('canvas')
@@ -36,7 +38,11 @@
 
 <body onload='init()'>
     <canvas id='canvas'></canvas>
-    <img id='img.tile' src='img/tile.jpg' style='display: none' />
+    <img id='img.headquarters' src='img/headquarters.png' style='display: none' />
+    <img id='img.grass' src='img/grass.png' style='display: none' />
+    <img id='img.coal' src='img/coal.png' style='display: none' />
+    <img id='img.coal.mine' src='img/coal.mine.png' style='display: none' />
+    <img id='img.conveyor' src='img/conveyor.png' style='display: none' />
 </body>
 
 </html>

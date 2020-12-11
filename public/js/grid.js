@@ -12,9 +12,9 @@ class Grid {
         this.map = map
         this.width = canvas.width
         this.height = canvas.height
-        this.cellSize = parseInt(this.height / Map.NODES_VERTICAL)
-        this.startX = (this.width / 2) - (Map.NODES_HORIZONTAL * this.cellSize / 2)
-        this.startY = (this.height / 2) - (Map.NODES_VERTICAL * this.cellSize / 2)
+        this.cellSize = parseInt(this.height / map.nodesVertical)
+        this.startX = (this.width / 2) - (map.nodesHorizontal * this.cellSize / 2)
+        this.startY = (this.height / 2) - (map.nodesVertical * this.cellSize / 2)
 
         canvas.addEventListener('click', e => {
             this.onCanvasClick(e)
@@ -27,46 +27,63 @@ class Grid {
     }
 
     render() {
-        this.renderBackground()
+        this.renderBackfield()
+        this.renderFields(this.map.fields)
         this.renderNodes(this.map.nodes)
     }
 
-    renderBackground() {
+    renderBackfield() {
         this.canvas.fillStyle = '#1e262c'
         this.canvas.fillRect(0, 0, this.width, this.height)
     }
 
+    renderFields(fields) {
+        fields.forEach(field => {
+            this.renderNode(field)
+        })
+    }
+
     renderNodes(nodes) {
         nodes.forEach(node => {
-            this.renderNode(node)
+            this.renderField(node)
         })
     }
 
     renderNode(node) {
-        this.canvas.strokeStyle = '#57595b'
+        /*this.canvas.strokeStyle = '#57595b'
         this.canvas.lineWidth = 0.1
-        /*this.canvas.strokeRect(
+        this.canvas.strokeRect(
             this.nodeX(node),
             this.nodeY(node),
             this.cellSize,
             this.cellSize
         )*/
 
-        let image = document.getElementById('img.tile')
+        let image = document.getElementById('img.' + node.type)
         this.canvas.drawImage(image,
-            this.nodeX(node),
-            this.nodeY(node),
+            this.tileX(node),
+            this.tileY(node),
             this.cellSize,
             this.cellSize
         )
     }
 
-    nodeX(node) {
-        return this.startX + (node.x * this.cellSize)
+    renderField(field) {
+        let image = document.getElementById('img.' + field.type)
+        this.canvas.drawImage(image,
+            this.tileX(field),
+            this.tileY(field),
+            this.cellSize,
+            this.cellSize
+        )
     }
 
-    nodeY(node) {
-        return this.startY + (node.y * this.cellSize)
+    tileX(tile) {
+        return this.startX + (tile.x * this.cellSize)
+    }
+
+    tileY(tile) {
+        return this.startY + (tile.y * this.cellSize)
     }
 
     onCanvasClick(e) {
@@ -76,9 +93,9 @@ class Grid {
 
         for (let i = 0; i < this.map.nodes.length; i++) {
             let node = this.map.nodes[i]
-            let left = this.nodeX(node)
+            let left = this.tileX(node)
             let right = left + this.cellSize
-            let top = this.nodeY(node)
+            let top = this.tileY(node)
             let bottom = top + this.cellSize
 
             if ((x >= left) && (x <= right) && (y >= top) && (y <= bottom)) {
