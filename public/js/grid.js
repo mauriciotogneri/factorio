@@ -21,9 +21,9 @@ class Grid {
         })
 
         canvas.addEventListener('contextmenu', e => {
-            e.preventDefault();
+            e.preventDefault()
             this.onCanvasClick(e)
-        });
+        })
     }
 
     render() {
@@ -39,7 +39,7 @@ class Grid {
     renderNodes(nodes) {
         nodes.forEach(node => {
             this.renderNode(node)
-        });
+        })
     }
 
     renderNode(node) {
