@@ -15,7 +15,8 @@
         let grid = null
         let lastTimestamp = 0
 
-        function init() {
+        function init()
+        {
             map = new Map()
             map.load()
             engine = new Engine(map)
@@ -29,7 +30,8 @@
             window.requestAnimationFrame(step)
         }
 
-        function step(timestamp) {
+        function step(timestamp)
+        {
             engine.update(timestamp - lastTimestamp)
             lastTimestamp = timestamp
             window.requestAnimationFrame(step)
@@ -38,12 +40,41 @@
 </head>
 
 <body onload='init()'>
+
     <canvas id='canvas'></canvas>
-    <img id='img.headquarters' src='img/headquarters.png' style='display: none' />
-    <img id='img.grass' src='img/grass.png' style='display: none' />
-    <img id='img.coal' src='img/coal.png' style='display: none' />
-    <img id='img.coal.mine' src='img/coal.mine.png' style='display: none' />
-    <img id='img.conveyor' src='img/conveyor.png' style='display: none' />
+
+    <img id='img.building.headquarters' src='img/building/building.headquarters.png' style='display: none' />
+    <img id='img.building.mine.coal' src='img/building/building.mine.coal.png' style='display: none' />
+    <img id='img.building.mine.copper' src='img/building/building.mine.copper.png' style='display: none' />
+    <img id='img.building.mine.iron' src='img/building/building.mine.iron.png' style='display: none' />
+    <img id='img.building.mine.stone' src='img/building/building.mine.stone.png' style='display: none' />
+
+    <img id='img.connection.junction' src='img/connection/connection.junction.png' style='display: none' />
+    <img id='img.connection.sorter' src='img/connection/connection.sorter.png' style='display: none' />
+    <img id='img.connection.router' src='img/connection/connection.router.png' style='display: none' />
+    <img id='img.connection.overflow' src='img/connection/connection.overflow.png' style='display: none' />
+
+    <img id='img.conveyor.left' src='img/conveyor/conveyor.left.png' style='display: none' />
+    <img id='img.conveyor.right' src='img/conveyor/conveyor.right.png' style='display: none' />
+    <img id='img.conveyor.up' src='img/conveyor/conveyor.up.png' style='display: none' />
+    <img id='img.conveyor.down' src='img/conveyor/conveyor.down.png' style='display: none' />
+
+    <img id='img.field.grass' src='img/field/field.grass.png' style='display: none' />
+
+    <img id='img.patch.coal' src='img/patch/patch.coal.png' style='display: none' />
+    <img id='img.patch.iron' src='img/patch/patch.iron.png' style='display: none' />
+    <img id='img.patch.copper' src='img/patch/patch.copper.png' style='display: none' />
+    <img id='img.patch.stone' src='img/patch/patch.stone.png' style='display: none' />
+
+    <img id='img.resource.ore.coal' src='img/resource/resource.ore.coal.png' style='display: none' />
+    <img id='img.resource.ore.copper' src='img/resource/resource.ore.copper.png' style='display: none' />
+    <img id='img.resource.ore.iron' src='img/resource/resource.ore.iron.png' style='display: none' />
+    <img id='img.resource.ore.stone' src='img/resource/resource.ore.stone.png' style='display: none' />
+    <img id='img.resource.brick' src='img/resource/resource.brick.png' style='display: none' />
+    <img id='img.resource.copper' src='img/resource/resource.copper.png' style='display: none' />
+    <img id='img.resource.iron' src='img/resource/resource.iron.png' style='display: none' />
+    <img id='img.resource.steal' src='img/resource/resource.steal.png' style='display: none' />
+
 </body>
 
 </html>
