@@ -80,13 +80,19 @@ class Grid
 
     renderBuilding(building)
     {
-        let image = document.getElementById('img.' + building.type)
-        this.canvas.drawImage(image,
-            this.tileX(building),
-            this.tileY(building),
-            this.cellSize,
-            this.cellSize
-        )
+        const x = this.tileX(building)
+        const y = this.tileY(building)
+        const size = this.cellSize
+        const angle = building.angle() * Math.PI / 180
+        const image = document.getElementById('img.' + building.type)
+
+        this.canvas.save()
+        this.canvas.translate(x + (size / 2), y + (size / 2))
+        this.canvas.rotate(angle);
+        this.canvas.drawImage(image, -size / 2, -size / 2, size, size)
+        this.canvas.restore()
+        //this.canvas.rotate(-angle);
+        //this.canvas.translate(-x, -y);
     }
 
     tileX(tile)

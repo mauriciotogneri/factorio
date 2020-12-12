@@ -47,12 +47,12 @@ function defaultMap()
             { x: 2, y: 8, type: Patch.TYPE_COAL, value: 1000 }
         ],
         buildings: [
-            { x: 5, y: 5, type: Building.TYPE_HEADQUARTERS },
-            { x: 2, y: 7, type: Building.TYPE_MINE_COAL },
-            { x: 3, y: 7, type: Building.TYPE_CONVEYOR_RIGHT },
-            { x: 4, y: 7, type: Building.TYPE_CONVEYOR_RIGHT },
-            { x: 5, y: 7, type: Building.TYPE_CONVEYOR_RIGHT },
-            { x: 5, y: 6, type: Building.TYPE_CONVEYOR_RIGHT },
+            { x: 5, y: 5, direction: Direction.UP, type: Building.TYPE_HEADQUARTERS },
+            { x: 2, y: 7, direction: Direction.RIGHT, type: Building.TYPE_MINE_COAL },
+            { x: 3, y: 7, direction: Direction.RIGHT, type: Building.TYPE_CONVEYOR },
+            { x: 4, y: 7, direction: Direction.RIGHT, type: Building.TYPE_CONVEYOR },
+            { x: 5, y: 7, direction: Direction.UP, type: Building.TYPE_CONVEYOR },
+            { x: 5, y: 6, direction: Direction.UP, type: Building.TYPE_CONVEYOR },
         ]
     }
 

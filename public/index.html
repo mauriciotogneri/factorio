@@ -2,13 +2,19 @@
 
 <head>
     <title>Factorio</title>
+
     <link href='css/style.css' rel='stylesheet' />
+    <link rel='icon' type='image/png' sizes='32x32' href='fav/favicon-32x32.png'>
+    <link rel='icon' type='image/png' sizes='16x16' href='fav/favicon-16x16.png'>
+
     <script src='js/grid.js' type='text/javascript'></script>
     <script src='js/building.js' type='text/javascript'></script>
     <script src='js/map.js' type='text/javascript'></script>
     <script src='js/engine.js' type='text/javascript'></script>
     <script src='js/field.js' type='text/javascript'></script>
     <script src='js/patch.js' type='text/javascript'></script>
+    <script src='js/constants.js' type='text/javascript'></script>
+
     <script>
         let map = null
         let engine = null
@@ -44,15 +50,16 @@
     <canvas id='canvas'></canvas>
 
     <img id='img.building.headquarters' src='img/building/building.headquarters.png' style='display: none' />
+    <img id='img.building.conveyor' src='img/building/building.conveyor.png' style='display: none' />
     <img id='img.building.mine.coal' src='img/building/building.mine.coal.png' style='display: none' />
     <img id='img.building.mine.copper' src='img/building/building.mine.copper.png' style='display: none' />
     <img id='img.building.mine.iron' src='img/building/building.mine.iron.png' style='display: none' />
     <img id='img.building.mine.stone' src='img/building/building.mine.stone.png' style='display: none' />
 
-    <img id='img.connection.junction' src='img/connection/connection.junction.png' style='display: none' />
+    <!--<img id='img.connection.junction' src='img/connection/connection.junction.png' style='display: none' />
     <img id='img.connection.sorter' src='img/connection/connection.sorter.png' style='display: none' />
     <img id='img.connection.router' src='img/connection/connection.router.png' style='display: none' />
-    <img id='img.connection.overflow' src='img/connection/connection.overflow.png' style='display: none' />
+    <img id='img.connection.overflow' src='img/connection/connection.overflow.png' style='display: none' />-->
 
     <img id='img.conveyor.left' src='img/conveyor/conveyor.left.png' style='display: none' />
     <img id='img.conveyor.right' src='img/conveyor/conveyor.right.png' style='display: none' />
