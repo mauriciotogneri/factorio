@@ -39,9 +39,9 @@ class Grid
             this.renderField(field)
         })
 
-        this.map.resources.forEach(resource =>
+        this.map.patches.forEach(patch =>
         {
-            this.renderResource(resource)
+            this.renderPatch(patch)
         })
 
         this.map.buildings.forEach(building =>
@@ -67,12 +67,12 @@ class Grid
         )
     }
 
-    renderResource(resource)
+    renderPatch(patch)
     {
-        let image = document.getElementById('img.' + resource.type)
+        let image = document.getElementById('img.' + patch.type)
         this.canvas.drawImage(image,
-            this.tileX(resource),
-            this.tileY(resource),
+            this.tileX(patch),
+            this.tileY(patch),
             this.cellSize,
             this.cellSize
         )

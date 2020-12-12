@@ -1,11 +1,11 @@
-class Resource
+class Patch
 {
     x = 0
     y = 0
     type = ''
     value = 0
 
-    static TYPE_COAL = 'coal'
+    static TYPE_COAL = 'patch.coal'
 
     constructor(x, y, type, value)
     {
@@ -17,7 +17,7 @@ class Resource
 
     static fromJson(json)
     {
-        return new Resource(
+        return new Patch(
             json.x,
             json.y,
             json.type,

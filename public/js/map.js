@@ -1,7 +1,7 @@
 class Map
 {
     fields = []
-    resources = []
+    patches = []
     buildings = []
     width = 0
     height = 0
@@ -15,7 +15,7 @@ class Map
 
         this.buildings = loadedMap.buildings.map(Building.fromJson)
         this.fields = loadedMap.fields.map(Field.fromJson)
-        this.resources = loadedMap.resources.map(Resource.fromJson)
+        this.patches = loadedMap.patches.map(Patch.fromJson)
     }
 }
 
@@ -29,7 +29,7 @@ function defaultMap()
     {
         for (let y = 0; y < height; y++)
         {
-            fields.push({ x: x, y: y, type: 'grass' })
+            fields.push({ x: x, y: y, type: Field.TYPE_GRASS })
         }
     }
 
@@ -38,21 +38,21 @@ function defaultMap()
         width: width,
         height: height,
         fields: fields,
-        resources: [
-            { x: 1, y: 6, type: 'coal', value: 1000 },
-            { x: 2, y: 6, type: 'coal', value: 1000 },
-            { x: 1, y: 7, type: 'coal', value: 1000 },
-            { x: 2, y: 7, type: 'coal', value: 1000 },
-            { x: 1, y: 8, type: 'coal', value: 1000 },
-            { x: 2, y: 8, type: 'coal', value: 1000 }
+        patches: [
+            { x: 1, y: 6, type: Patch.TYPE_COAL, value: 1000 },
+            { x: 2, y: 6, type: Patch.TYPE_COAL, value: 1000 },
+            { x: 1, y: 7, type: Patch.TYPE_COAL, value: 1000 },
+            { x: 2, y: 7, type: Patch.TYPE_COAL, value: 1000 },
+            { x: 1, y: 8, type: Patch.TYPE_COAL, value: 1000 },
+            { x: 2, y: 8, type: Patch.TYPE_COAL, value: 1000 }
         ],
         buildings: [
-            { x: 5, y: 5, type: 'headquarters' },
-            { x: 2, y: 7, type: 'coal.mine' },
-            { x: 3, y: 7, type: 'conveyor' },
-            { x: 4, y: 7, type: 'conveyor' },
-            { x: 5, y: 7, type: 'conveyor' },
-            { x: 5, y: 6, type: 'conveyor' },
+            { x: 5, y: 5, type: Building.TYPE_HEADQUARTERS },
+            { x: 2, y: 7, type: Building.TYPE_MINE_COAL },
+            { x: 3, y: 7, type: Building.TYPE_CONVEYOR_RIGHT },
+            { x: 4, y: 7, type: Building.TYPE_CONVEYOR_RIGHT },
+            { x: 5, y: 7, type: Building.TYPE_CONVEYOR_RIGHT },
+            { x: 5, y: 6, type: Building.TYPE_CONVEYOR_RIGHT },
         ]
     }
 

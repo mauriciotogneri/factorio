@@ -4,7 +4,7 @@ class Field
     y = 0
     type = ''
 
-    static TYPE_GRASS = 'grass'
+    static TYPE_GRASS = 'field.grass'
 
     constructor(x, y, type)
     {

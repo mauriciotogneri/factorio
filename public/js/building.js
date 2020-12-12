@@ -4,9 +4,9 @@ class Building
     y = 0
     type = ''
 
-    static TYPE_CONVEYOR = 'conveyor'
-    static TYPE_COAL_MINE = 'coal.mine'
-    static TYPE_HEADQUARTERS = 'headquarters'
+    static TYPE_CONVEYOR_RIGHT = 'conveyor.right'
+    static TYPE_MINE_COAL = 'building.mine.coal'
+    static TYPE_HEADQUARTERS = 'building.headquarters'
 
     constructor(x, y, type)
     {
