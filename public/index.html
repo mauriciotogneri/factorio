@@ -1,12 +1,14 @@
 <html>
 
 <head>
+
     <title>Factorio</title>
 
     <link href='css/style.css' rel='stylesheet' />
     <link rel='icon' type='image/png' sizes='32x32' href='fav/favicon-32x32.png'>
     <link rel='icon' type='image/png' sizes='16x16' href='fav/favicon-16x16.png'>
 
+    <script src='js/game.js' type='text/javascript'></script>
     <script src='js/grid.js' type='text/javascript'></script>
     <script src='js/building.js' type='text/javascript'></script>
     <script src='js/map.js' type='text/javascript'></script>
@@ -15,49 +17,9 @@
     <script src='js/patch.js' type='text/javascript'></script>
     <script src='js/constants.js' type='text/javascript'></script>
 
-    <!-- 
-        Call static method for step
-    -->
-    <script>
-        let map = null
-        let engine = null
-        let grid = null
-        let lastTimestamp = 0
-
-        function init()
-        {
-            map = new Map()
-            map.load()
-            engine = new Engine(map)
-
-            const canvas = document.getElementById('canvas')
-            canvas.width = document.body.clientWidth
-            canvas.height = document.body.clientHeight
-            grid = new Grid(canvas, map)
-            grid.render()
-
-            window.requestAnimationFrame(step)
-        }
-
-        function step(timestamp)
-        {
-            const start1 = new Date().getMilliseconds()
-            engine.update(timestamp - lastTimestamp)
-            const end1 = new Date().getMilliseconds()
-            console.log('update: ' + (end1 - start1))
-
-            const start2 = new Date().getMilliseconds()
-            grid.render()
-            const end2 = new Date().getMilliseconds()
-            console.log('render: ' + (end2 - start2))
-
-            lastTimestamp = timestamp
-            window.requestAnimationFrame(step)
-        }
-    </script>
 </head>
 
-<body onload='init()'>
+<body onload='Game.init()'>
 
     <canvas id='canvas'></canvas>
 
@@ -72,11 +34,6 @@
     <img id='img.connection.sorter' src='img/connection/connection.sorter.png' style='display: none' />
     <img id='img.connection.router' src='img/connection/connection.router.png' style='display: none' />
     <img id='img.connection.overflow' src='img/connection/connection.overflow.png' style='display: none' />
-
-    <!--<img id='img.conveyor.left' src='img/conveyor/conveyor.left.png' style='display: none' />
-    <img id='img.conveyor.right' src='img/conveyor/conveyor.right.png' style='display: none' />
-    <img id='img.conveyor.up' src='img/conveyor/conveyor.up.png' style='display: none' />
-    <img id='img.conveyor.down' src='img/conveyor/conveyor.down.png' style='display: none' />-->
 
     <img id='img.field.grass' src='img/field/field.grass.png' style='display: none' />
 
