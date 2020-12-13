@@ -41,12 +41,15 @@
 
         function step(timestamp)
         {
+            const start1 = new Date().getMilliseconds()
             engine.update(timestamp - lastTimestamp)
+            const end1 = new Date().getMilliseconds()
+            console.log('update: ' + (end1 - start1))
 
-            const start = new Date().getMilliseconds()
+            const start2 = new Date().getMilliseconds()
             grid.render()
-            const end = new Date().getMilliseconds()
-            console.log('render: ' + (end - start))
+            const end2 = new Date().getMilliseconds()
+            console.log('render: ' + (end2 - start2))
 
             lastTimestamp = timestamp
             window.requestAnimationFrame(step)
