@@ -1,27 +1,21 @@
 # Factorio
 
 ## General
-* Survive certain amount of enemy waves
-* Building sizes: 1 (1x1), 2 (2x2) and 3 (3x3)
-* Buildings can be improved: the bigger the level, the more efficient/powerful but the more energy they require
-
-junction: only allows resources to continue moving in the same direction
-router: distribute items to all three other directions (alternating)
-sorter: selects a list of objects that will allow to pass in the same direction they came. all other resources will go the two other ways (alternating)
-overflow: allows resources to continue in the same direction but if it's full, it will send them in the two other directions
-
-save automatically after X seconds
-move with ASDW
-mines?
+* survive certain amount of enemy waves
+* building sizes: 1 (1x1), 2 (2x2) and 3 (3x3)
+* buildings can be improved: the bigger the level, the more efficient/powerful but the more energy they require
+* save automatically after X seconds
+* move camera with ASDW
+* mines?
 
 ## Resources
 * primary
-    * energy
-    * oil
     * coal
     * iron
     * copper
     * stone
+    * energy
+    * oil
     * uranium/plutonium
 * secondary
     * barrel = iron + coal
@@ -56,19 +50,23 @@ mines?
 * copper mine
 * stone mine
 
-# Power plants
+## Power plants
 * solar plant
 * wind plant
 * coal plant
 * geothermal plant
 * nuclear plant
 
-# Connections
+## Connections
 * conveyor belt (level 1: moves one element/click, level 2: moves 2 elements/click) They are bidirectional
+* junction: only allows resources to continue moving in the same direction
+* router: distribute items to all three other directions (alternating)
+* sorter: selects a list of objects that will allow to pass in the same direction they came. all other resources will go the two other ways (alternating)
+* overflow: allows resources to continue in the same direction but if it's full, it will send them in the two other directions
 * electric pole
 * power line
 
-# Turrets: (hp + shield + attack + range)
+## Turrets: (hp + shield + attack + range)
 * light turret (bullets)
 * heavy turret (bullets)
 * cannon turret (rockets)
@@ -76,23 +74,23 @@ mines?
 * ion turret (use no bullets but uses more power)
 * plasma turret (use no bullets but uses more power)
 
-# Walls: (hp + shield)
+## Walls: (hp + shield)
 * stone wall
 * iron
 * steal
 
-# Research
+## Research
 * lab
 * weapons research (increases fire power)
 * shield research (increases shield)
 * armor research (increases hp)
 * energy research (increases range)
 
-# Enemies
+## Enemies
 * coming form sides and just smashing across
 * coming from sides and shooting
 
-# Extras
+## Extras
 * wood?
 * water?
 * gas?
@@ -117,10 +115,10 @@ mines?
 
 ----------------------------------------------------------------------------------------------------
 
-# Web
+## Web
 https://andstoreapps.web.app
 
-# Tiles
+## Tiles
 https://factoriocheatsheet.com
 https://davemcw.com/factorio/tech-tree
 http://doomeer.com/factorio
