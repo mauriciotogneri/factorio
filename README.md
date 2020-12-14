@@ -1,50 +1,32 @@
 # Factorio
 
 ## General
-* survive certain amount of enemy waves
+* survive X amount of enemy waves
 * building sizes: 1 (1x1), 2 (2x2) and 3 (3x3)
 * buildings can be improved: the bigger the level, the more efficient/powerful but the more energy they require
 * save automatically after X seconds
 * move camera with ASDW
-* mines?
 
 ## Resources
 * primary
-    * coal
-    * iron
-    * copper
-    * stone
+    * coal ore
+    * iron ore
+    * copper ore
+    * stone ore
     * energy
-    * oil
-    * uranium/plutonium
 * secondary
-    * barrel = iron + coal
-    * iron plate = iron + coal
-    * copper cable = copper + coal
-    * stone brick = stone + coal
+    * iron plate = iron ore + coal ore
+    * copper plate = copper ore + coal ore
+    * stone brick = stone ore + coal ore
 * tertiary
-    * steal plate = iron plate + coal
-    * oil barrel = oil + barrel + coal
-    * plutonium barrel = plutonium + barrel + coal
+    * steel beam = iron plate + coal ore
 
-## Factories produce
-* gear
-* ammo
-* engine
-* circuit
-* plastic bar
-* pipe
-* batteries
-* empty barrel?
-
-## Buildings
-* warehouse (level 1: 100 of each item, level 2: 200 of each item)
-* oil refinery
-* chemical plant
-* silo?
+## Factories
+* gear factory = iron plate
+* engine = gear + steal beam + copper plate
+* batteries = iron plate + copper plate
 
 ## Mines
-* oil mine
 * coal mine
 * iron mine
 * copper mine
@@ -54,8 +36,6 @@
 * solar plant
 * wind plant
 * coal plant
-* geothermal plant
-* nuclear plant
 
 ## Connections
 * conveyor belt (level 1: moves one element/click, level 2: moves 2 elements/click) They are bidirectional
@@ -67,17 +47,21 @@
 * power line
 
 ## Turrets: (hp + shield + attack + range)
-* light turret (bullets)
-* heavy turret (bullets)
-* cannon turret (rockets)
-* laser turret (use no bullets but uses more power)
-* ion turret (use no bullets but uses more power)
-* plasma turret (use no bullets but uses more power)
+* light turret (firearm magazine) = iron plate + copper plate + gear
+* heavy turret (piercing rounds magazine) = steel beam + copper plate + gear
+* cannon turret (cannon shell) = stone brick + steel beam + copper plate + gear + engine
+* laser turret (no ammo but uses more power) = stone brick + steel beam + copper plate + gear + batteries
+* plasma turret (no ammo but uses more power) = stone brick + steel beam + copper plate + gear + batteries + engine
+
+## Ammo
+* firearm magazine = iron plate + cooper plate
+* piercing rounds magazine = steel beam + cooper plate
+* cannon shell = steel beam + iron plate + cooper plate
 
 ## Walls: (hp + shield)
-* stone wall
-* iron
-* steal
+* stone wall = stone brick
+* iron wall = iron plate
+* steal wall = steel beam
 
 ## Research
 * lab
@@ -86,16 +70,33 @@
 * armor research (increases hp)
 * energy research (increases range)
 
+## Buildings
+* warehouse (level 1: stores 100 of an item, level 2: stores 200 of an item)
+
 ## Enemies
 * coming form sides and just smashing across
 * coming from sides and shooting
 
 ## Extras
-* wood?
-* water?
-* gas?
-* gas power plant?
-* oil power plant?
+* wood
+* water
+* gas
+* gas power plant
+* oil power plant
+* mines
+* oil
+* uranium/plutonium
+* barrel = iron + coal
+* oil barrel = oil + barrel + coal
+* plutonium barrel = plutonium + barrel + coal
+* empty barrel
+* plastic bar
+* pipe
+* oil refinery
+* chemical plant
+* geothermal plant
+* nuclear plant
+* circuit
 
 ----------------------------------------------------------------------------------------------------
 
