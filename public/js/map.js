@@ -4,14 +4,14 @@ class Map
     height = 0
     fields = []
     patches = []
-    buildings = []
+    structures = []
 
-    constructor(width, height, fields, patches, buildings)
+    constructor(width, height, fields, patches, structures)
     {
         this.width = width
         this.height = height
         this.fields = fields
         this.patches = patches
-        this.buildings = buildings
+        this.structures = structures
     }
 }

@@ -12,7 +12,7 @@ class MapLoader
                 json.height,
                 json.fields.map(field => this.loadField(version, field)),
                 json.patches.map(patch => this.loadPatch(version, patch)),
-                json.buildings.map(building => this.loadBuilding(version, building)),
+                json.structures.map(structure => this.loadStructure(version, structure)),
             )
         }
     }
@@ -42,11 +42,11 @@ class MapLoader
         }
     }
 
-    loadBuilding(version, json)
+    loadStructure(version, json)
     {
         if (version === MapVersion.V1)
         {
-            return new Building(
+            return new Structure(
                 json.x,
                 json.y,
                 json.direction,
@@ -82,13 +82,13 @@ class MapLoader
                 { x: 1, y: 8, type: Patch.TYPE_COAL, value: 1000 },
                 { x: 2, y: 8, type: Patch.TYPE_COAL, value: 1000 }
             ],
-            buildings: [
-                { x: 5, y: 5, direction: Direction.UP, type: Building.TYPE_HEADQUARTERS },
-                { x: 2, y: 7, direction: Direction.RIGHT, type: Building.TYPE_MINE_COAL },
-                { x: 3, y: 7, direction: Direction.RIGHT, type: Building.TYPE_CONVEYOR },
-                { x: 4, y: 7, direction: Direction.RIGHT, type: Building.TYPE_CONVEYOR },
-                { x: 5, y: 7, direction: Direction.UP, type: Building.TYPE_CONVEYOR },
-                { x: 5, y: 6, direction: Direction.UP, type: Building.TYPE_CONVEYOR },
+            structures: [
+                { x: 5, y: 5, direction: Direction.UP, type: Structure.TYPE_HEADQUARTERS },
+                { x: 2, y: 7, direction: Direction.RIGHT, type: Structure.TYPE_MINE_COAL },
+                { x: 3, y: 7, direction: Direction.RIGHT, type: Structure.TYPE_CONVEYOR },
+                { x: 4, y: 7, direction: Direction.RIGHT, type: Structure.TYPE_CONVEYOR },
+                { x: 5, y: 7, direction: Direction.UP, type: Structure.TYPE_CONVEYOR },
+                { x: 5, y: 6, direction: Direction.UP, type: Structure.TYPE_CONVEYOR },
             ]
         }
 

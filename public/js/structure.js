@@ -1,13 +1,13 @@
-class Building
+class Structure
 {
     x = 0
     y = 0
     direction = ''
     type = ''
 
-    static TYPE_CONVEYOR = 'building.conveyor'
-    static TYPE_MINE_COAL = 'building.mine.coal'
-    static TYPE_HEADQUARTERS = 'building.headquarters'
+    static TYPE_CONVEYOR = 'structure.conveyor'
+    static TYPE_MINE_COAL = 'structure.mine.coal'
+    static TYPE_HEADQUARTERS = 'structure.headquarters'
 
     constructor(x, y, direction, type)
     {

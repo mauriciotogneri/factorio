@@ -44,9 +44,9 @@ class Grid
             this.renderPatch(patch)
         })
 
-        this.map.buildings.forEach(building =>
+        this.map.structures.forEach(structure =>
         {
-            this.renderBuilding(building)
+            this.renderStructure(structure)
         })
     }
 
@@ -78,13 +78,13 @@ class Grid
         )
     }
 
-    renderBuilding(building)
+    renderStructure(structure)
     {
-        const x = this.tileX(building)
-        const y = this.tileY(building)
+        const x = this.tileX(structure)
+        const y = this.tileY(structure)
         const size = this.cellSize
-        const angle = building.angle() * Math.PI / 180
-        const image = document.getElementById('img.' + building.type)
+        const angle = structure.angle() * Math.PI / 180
+        const image = document.getElementById('img.' + structure.type)
 
         this.canvas.save()
         this.canvas.translate(x + (size / 2), y + (size / 2))
@@ -111,24 +111,24 @@ class Grid
         const x = e.clientX - rect.left
         const y = e.clientY - rect.top
 
-        for (let i = 0; i < this.map.buildings.length; i++)
+        for (let i = 0; i < this.map.structures.length; i++)
         {
-            let building = this.map.buildings[i]
-            let left = this.tileX(building)
+            let structure = this.map.structures[i]
+            let left = this.tileX(structure)
             let right = left + this.cellSize
-            let top = this.tileY(building)
+            let top = this.tileY(structure)
             let bottom = top + this.cellSize
 
             if ((x >= left) && (x <= right) && (y >= top) && (y <= bottom))
             {
-                this.onBuildingClick(building)
+                this.onStructureClick(structure)
                 break
             }
         }
     }
 
-    onBuildingClick(building)
+    onStructureClick(structure)
     {
-        console.log('Building clicked: ' + building.x + ',' + building.y)
+        Game.onStructureClick(structure)
     }
 }

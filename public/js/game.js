@@ -46,4 +46,9 @@ class Game
     {
         Game.instance.loop(timestamp)
     }
+
+    static onStructureClick(structure)
+    {
+        console.log('Structure clicked: ' + structure.x + ',' + structure.y)
+    }
 }

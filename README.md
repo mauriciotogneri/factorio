@@ -2,42 +2,47 @@
 
 ## General
 * survive X amount of enemy waves
-* building sizes: 1 (1x1), 2 (2x2) and 3 (3x3)
-* buildings can be improved: the bigger the level, the more efficient/powerful but the more energy they require
+* structure sizes: 1 (1x1), 2 (2x2) and 3 (3x3)
+* structures can be improved: the bigger the level, the more efficient/powerful but the more energy they require
 * save automatically after X seconds
 * move camera with ASDW
 
 ## Resources
-* primary
-    * coal ore
-    * iron ore
-    * copper ore
-    * stone ore
-    * energy
-* secondary
-    * iron plate = iron ore + coal ore
-    * copper plate = copper ore + coal ore
-    * stone brick = stone ore + coal ore
-* tertiary
-    * steel beam = iron plate + coal ore
 
-## Factories
+### Primary
+* coal ore
+* iron ore
+* copper ore
+* stone ore
+* energy
+
+### Secondary
+* iron plate = iron ore + coal ore
+* copper plate = copper ore + coal ore
+* stone brick = stone ore + coal ore
+
+### Tertiary
+* steel beam = iron plate + coal ore
+
+### Ammo
+* firearm magazine = iron plate + cooper plate
+* piercing rounds magazine = steel beam + cooper plate
+* cannon shell = steel beam + iron plate + cooper plate
+
+## Structures
+
+### Factories
 * gear factory = iron plate
 * engine = gear + steal beam + copper plate
 * batteries = iron plate + copper plate
 
-## Mines
+### Mines
 * coal mine
 * iron mine
 * copper mine
 * stone mine
 
-## Power plants
-* solar plant
-* wind plant
-* coal plant
-
-## Connections
+### Connections
 * conveyor belt (level 1: moves one element/click, level 2: moves 2 elements/click) They are bidirectional
 * junction: only allows resources to continue moving in the same direction
 * router: distribute items to all three other directions (alternating)
@@ -46,32 +51,30 @@
 * electric pole
 * power line
 
-## Turrets: (hp + shield + attack + range)
+### Power plants
+* solar plant
+* wind plant
+* coal plant
+
+### Turrets: (hp + shield + attack + range)
 * light turret (firearm magazine) = iron plate + copper plate + gear
 * heavy turret (piercing rounds magazine) = steel beam + copper plate + gear
 * cannon turret (cannon shell) = stone brick + steel beam + copper plate + gear + engine
 * laser turret (no ammo but uses more power) = stone brick + steel beam + copper plate + gear + batteries
 * plasma turret (no ammo but uses more power) = stone brick + steel beam + copper plate + gear + batteries + engine
 
-## Ammo
-* firearm magazine = iron plate + cooper plate
-* piercing rounds magazine = steel beam + cooper plate
-* cannon shell = steel beam + iron plate + cooper plate
-
-## Walls: (hp + shield)
+### Walls: (hp + shield)
 * stone wall = stone brick
 * iron wall = iron plate
 * steal wall = steel beam
 
-## Research
-* lab
-* weapons research (increases fire power)
-* shield research (increases shield)
-* armor research (increases hp)
-* energy research (increases range)
-
-## Buildings
+### Misc
 * warehouse (level 1: stores 100 of an item, level 2: stores 200 of an item)
+* research lab
+    - weapons research (increases fire power)
+    - shield research (increases shield)
+    - armor research (increases hp)
+    - energy research (increases range)
 
 ## Enemies
 * coming form sides and just smashing across
