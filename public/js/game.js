@@ -16,7 +16,6 @@ class Game
         canvas.width = document.body.clientWidth
         canvas.height = document.body.clientHeight
         this.grid = new Grid(canvas, this.map)
-        this.grid.render()
     }
 
     loop(timestamp)
