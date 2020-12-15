@@ -48,8 +48,6 @@
 * router: distribute items to all three other directions (alternating)
 * sorter: selects a list of objects that will allow to pass in the same direction they came. all other resources will go the two other ways (alternating)
 * overflow: allows resources to continue in the same direction but if it's full, it will send them in the two other directions
-* electric pole
-* power line
 
 ### Power plants
 * solar plant
@@ -69,7 +67,7 @@
 * steal wall = steel beam
 
 ### Misc
-* warehouse (level 1: stores 100 of an item, level 2: stores 200 of an item)
+* headquarters
 * research lab
     - weapons research (increases fire power)
     - shield research (increases shield)
@@ -81,6 +79,8 @@
 * coming from sides and shooting
 
 ## Extras
+* electric pole
+* power line
 * wood
 * water
 * gas
@@ -100,6 +100,7 @@
 * geothermal plant
 * nuclear plant
 * circuit
+* warehouse
 
 ----------------------------------------------------------------------------------------------------
 

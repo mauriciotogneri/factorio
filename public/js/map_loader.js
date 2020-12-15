@@ -85,10 +85,10 @@ class MapLoader
             structures: [
                 { x: 5, y: 5, direction: Direction.UP, type: Structure.TYPE_HEADQUARTERS },
                 { x: 2, y: 7, direction: Direction.RIGHT, type: Structure.TYPE_MINE_COAL },
-                { x: 3, y: 7, direction: Direction.RIGHT, type: Structure.TYPE_CONVEYOR },
-                { x: 4, y: 7, direction: Direction.RIGHT, type: Structure.TYPE_CONVEYOR },
-                { x: 5, y: 7, direction: Direction.UP, type: Structure.TYPE_CONVEYOR },
-                { x: 5, y: 6, direction: Direction.UP, type: Structure.TYPE_CONVEYOR },
+                { x: 3, y: 7, direction: Direction.RIGHT, type: Structure.TYPE_CONNECTION_CONVEYOR },
+                { x: 4, y: 7, direction: Direction.RIGHT, type: Structure.TYPE_CONNECTION_CONVEYOR },
+                { x: 5, y: 7, direction: Direction.UP, type: Structure.TYPE_CONNECTION_CONVEYOR },
+                { x: 5, y: 6, direction: Direction.UP, type: Structure.TYPE_CONNECTION_CONVEYOR },
             ]
         }
 
