@@ -33,9 +33,9 @@ class Structure
     static TYPE_TURRET_LASER = 'structure.turret.laser'
     static TYPE_TURRET_PLASMA = 'structure.turret.plasma'
 
-    static TYPE_WALL_stone = 'structure.wall.stone'
-    static TYPE_WALL_iron = 'structure.wall.iron'
-    static TYPE_WALL_steal = 'structure.wall.steal'
+    static TYPE_WALL_STONE = 'structure.wall.stone'
+    static TYPE_WALL_IRON = 'structure.wall.iron'
+    static TYPE_WALL_STEAL = 'structure.wall.steal'
 
     constructor(x, y, direction, type)
     {
