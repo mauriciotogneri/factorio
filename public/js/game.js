@@ -10,6 +10,8 @@ class Game
     constructor()
     {
         this.map = new MapLoader().load()
+        this.map.connect()
+
         this.engine = new Engine(this.map)
 
         const canvas = document.getElementById('canvas')

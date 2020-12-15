@@ -88,11 +88,11 @@ class Grid
 
         this.canvas.save()
         this.canvas.translate(x + (size / 2), y + (size / 2))
-        this.canvas.rotate(angle);
+        this.canvas.rotate(angle)
         this.canvas.drawImage(image, -size / 2, -size / 2, size, size)
         this.canvas.restore()
-        //this.canvas.rotate(-angle);
-        //this.canvas.translate(-x, -y);
+        //this.canvas.rotate(-angle)
+        //this.canvas.translate(-x, -y)
     }
 
     tileX(tile)
@@ -111,9 +111,8 @@ class Grid
         const x = e.clientX - rect.left
         const y = e.clientY - rect.top
 
-        for (let i = 0; i < this.map.structures.length; i++)
+        for (let structure of this.map.structures)
         {
-            let structure = this.map.structures[i]
             let left = this.tileX(structure)
             let right = left + this.cellSize
             let top = this.tileY(structure)
