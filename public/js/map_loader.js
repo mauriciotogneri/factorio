@@ -46,12 +46,29 @@ class MapLoader
     {
         if (version === MapVersion.V1)
         {
-            return new Structure(
-                json.x,
-                json.y,
-                json.type,
-                json.direction
-            )
+            if (json.type === Structure.TYPE_HEADQUARTERS)
+            {
+                return new Headquarters(
+                    json.x,
+                    json.y
+                )
+            }
+            else if (json.type === Structure.TYPE_MINE_COAL)
+            {
+                return new MineCoal(
+                    json.x,
+                    json.y,
+                    json.direction
+                )
+            }
+            else if (json.type === Structure.TYPE_CONNECTION_CONVEYOR)
+            {
+                return new Conveyor(
+                    json.x,
+                    json.y,
+                    json.direction
+                )
+            }
         }
     }
 

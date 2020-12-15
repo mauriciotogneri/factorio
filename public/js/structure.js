@@ -38,7 +38,7 @@ class Structure
     static TYPE_POWER_WIND = 'structure.power.wind'
     static TYPE_POWER_COAL = 'structure.power.coal'
 
-    constructor(x, y, type, direction)
+    constructor(x, y, type, direction = '')
     {
         this.x = x
         this.y = y

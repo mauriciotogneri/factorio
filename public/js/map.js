@@ -15,6 +15,14 @@ class Map
         this.structures = structures
     }
 
+    update(delta)
+    {
+        for (let structure of this.structures)
+        {
+            structure.update(delta)
+        }
+    }
+
     connect()
     {
         for (let structure of this.structures)

@@ -9,6 +9,6 @@ class Engine
 
     update(delta)
     {
-        console.log(delta)
+        this.map.update(delta)
     }
 }
