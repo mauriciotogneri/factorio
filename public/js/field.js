@@ -12,13 +12,4 @@ class Field
         this.y = y
         this.type = type
     }
-
-    static fromJson(json)
-    {
-        return new Field(
-            json.x,
-            json.y,
-            json.type
-        )
-    }
 }

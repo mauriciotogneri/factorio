@@ -14,14 +14,4 @@ class Patch
         this.type = type
         this.value = value
     }
-
-    static fromJson(json)
-    {
-        return new Patch(
-            json.x,
-            json.y,
-            json.type,
-            json.value
-        )
-    }
 }

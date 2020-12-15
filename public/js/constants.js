@@ -5,3 +5,8 @@ class Direction
     static LEFT = 'left'
     static RIGHT = 'right'
 }
+
+class MapVersion
+{
+    static V1 = '1'
+}

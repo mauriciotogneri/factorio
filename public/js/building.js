@@ -34,14 +34,4 @@ class Building
                 return 270;
         }
     }
-
-    static fromJson(json)
-    {
-        return new Building(
-            json.x,
-            json.y,
-            json.direction,
-            json.type
-        )
-    }
 }
