@@ -37,10 +37,10 @@
 * batteries = iron plate + copper plate
 
 ### Mines
-* coal mine
-* iron mine
-* copper mine
-* stone mine
+* coal mine = gear + iron plate
+* iron mine = gear + iron plate
+* copper mine = gear + iron plate
+* stone mine = gear + iron plate
 
 ### Connections
 * conveyor belt (level 1: moves one element/click, level 2: moves 2 elements/click) They are bidirectional

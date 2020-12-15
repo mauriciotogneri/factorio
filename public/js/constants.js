@@ -4,6 +4,32 @@ class Direction
     static DOWN = 'down'
     static LEFT = 'left'
     static RIGHT = 'right'
+
+    static opposite(direction)
+    {
+        switch (direction)
+        {
+            case Direction.UP:
+                return Direction.DOWN
+
+            case Direction.RIGHT:
+                return Direction.LEFT
+
+            case Direction.DOWN:
+                return Direction.UP
+
+            case Direction.LEFT:
+                return Direction.RIGHT
+
+            default:
+                return direction
+        }
+    }
+}
+
+class Resource
+{
+    static COAL = 'coal'
 }
 
 class MapVersion

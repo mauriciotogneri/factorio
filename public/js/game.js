@@ -3,7 +3,6 @@ class Game
     static instance = null
 
     map = null
-    engine = null
     grid = null
     lastTimestamp = 0
 
@@ -11,8 +10,6 @@ class Game
     {
         this.map = new MapLoader().load()
         this.map.connect()
-
-        this.engine = new Engine(this.map)
 
         const canvas = document.getElementById('canvas')
         canvas.width = document.body.clientWidth
@@ -22,16 +19,19 @@ class Game
 
     loop(timestamp)
     {
-        const start1 = performance.now()
-        const delta = (timestamp - this.lastTimestamp).toFixed(2)
-        this.engine.update(delta)
-        const end1 = performance.now()
-        console.log('update: ' + (end1 - start1).toFixed(2))
+        if (this.lastTimestamp > 0)
+        {
+            const start1 = performance.now()
+            const delta = parseFloat((timestamp - this.lastTimestamp).toFixed(2))
+            this.map.update(delta)
+            const end1 = performance.now()
+            console.log('update: ' + (end1 - start1).toFixed(2))
 
-        const start2 = performance.now()
-        this.grid.render()
-        const end2 = performance.now()
-        console.log('render: ' + (end2 - start2).toFixed(2))
+            const start2 = performance.now()
+            this.grid.render()
+            const end2 = performance.now()
+            console.log('render: ' + (end2 - start2).toFixed(2))
+        }
 
         this.lastTimestamp = timestamp
 

@@ -9,4 +9,9 @@ class Conveyor extends Structure
     {
         console.log(delta)
     }
+
+    acceptResource(type, fromDirection)
+    {
+        return (type === Resource.TYPE_COAL) && (Direction.opposite(this.direction) === fromDirection)
+    }
 }

@@ -46,6 +46,11 @@ class Structure
         this.direction = direction
     }
 
+    acceptResource()
+    {
+        return false
+    }
+
     setDirectionalStructure(structure)
     {
         if (this.type == Structure.TYPE_CONNECTION_CONVEYOR)
