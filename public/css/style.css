@@ -18,7 +18,7 @@ html, body {
 
 .topBar{
     width: 100%;
-    background-color: #222222;
+    background-color: #666666;
     display: flex;
     padding: 5px;
     justify-content: center;
