@@ -100,12 +100,12 @@ class MapLoader
                 { x: 2, y: 8, type: Patch.TYPE_COAL, value: 1000 }
             ],
             structures: [
-                { x: 5, y: 5, type: Structure.TYPE_HEADQUARTERS, direction: Direction.UP },
                 { x: 2, y: 7, type: Structure.TYPE_MINE_COAL, direction: Direction.RIGHT },
                 { x: 3, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
                 { x: 4, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
-                { x: 5, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.UP },
-                { x: 5, y: 6, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.UP },
+                { x: 5, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
+                { x: 6, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
+                { x: 7, y: 7, type: Structure.TYPE_HEADQUARTERS, direction: Direction.UP }
             ]
         }
 

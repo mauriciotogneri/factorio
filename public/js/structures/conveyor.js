@@ -17,6 +17,13 @@ class Conveyor extends Structure
         {
             this.progress[i] += (delta / Conveyor.MAX_TIME)
 
+            if (this.progress[i] > 1)
+            {
+                this.progress[i] = 1
+            }
+
+            let previous = this.progressOfPrevious(i)
+
             if (this.progress[i] >= 1)
             {
                 let resource = this.resources[i]
@@ -28,6 +35,11 @@ class Conveyor extends Structure
                 }
             }
         }
+    }
+
+    progressOfPrevious(i)
+    {
+        return this.progress[i - 1] || 0
     }
 
     acceptResource(resource, fromDirection)
