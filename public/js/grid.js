@@ -86,13 +86,18 @@ class Grid
         const angle = structure.angle() * Math.PI / 180
         const image = document.getElementById('img.' + structure.type)
 
-        this.canvas.save()
-        this.canvas.translate(x + (size / 2), y + (size / 2))
-        this.canvas.rotate(angle)
-        this.canvas.drawImage(image, -size / 2, -size / 2, size, size)
-        this.canvas.restore()
-        //this.canvas.rotate(-angle)
-        //this.canvas.translate(-x, -y)
+        if (angle !== 0)
+        {
+            this.canvas.save()
+            this.canvas.translate(x + (size / 2), y + (size / 2))
+            this.canvas.rotate(angle)
+            this.canvas.drawImage(image, -size / 2, -size / 2, size, size)
+            this.canvas.restore()
+        }
+        else
+        {
+            this.canvas.drawImage(image, x, y, size, size)
+        }
     }
 
     tileX(tile)
