@@ -3,7 +3,7 @@ class Conveyor extends Structure
     resources = []
     progress = []
 
-    static MAX_ITEMS = 2
+    static MAX_ITEMS = 3
     static MAX_TIME = 1000
 
     constructor(x, y, direction)
@@ -35,15 +35,29 @@ class Conveyor extends Structure
 
     acceptResource(resource, fromDirection)
     {
-        const accepted = (this.resources.length < Conveyor.MAX_ITEMS) && (this.direction !== fromDirection)
+        const canAccept = (this.resources.length < Conveyor.MAX_ITEMS) && (this.direction !== fromDirection)
 
-        if (accepted)
+        if (canAccept)
         {
-            this.resources.push(resource)
-            this.progress.push(0)
-        }
+            if (this.direction === Direction.opposite(fromDirection))
+            {
+                this.resources.push(resource)
+                this.progress.push(0)
 
-        return accepted
+                return true
+            }
+            else if (this.resources.length <= parseInt(Conveyor.MAX_ITEMS / 2))
+            {
+                this.resources.push(resource)
+                this.progress.push(1 - (1 / Conveyor.MAX_ITEMS))
+
+                return true
+            }
+            else
+            {
+                return false
+            }
+        }
     }
 
     isConveyor()

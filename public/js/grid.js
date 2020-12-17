@@ -129,9 +129,9 @@ class Grid
                 }
             }
 
-            this.canvas.fillStyle = 'red';
-            this.canvas.font = '20px Courier';
-            this.canvas.fillText(structure.resources.length, x + (size / 3), y + (size / 1.5));
+            //this.canvas.fillStyle = 'red';
+            //this.canvas.font = '20px Courier';
+            //this.canvas.fillText(structure.resources.length, x + (size / 3), y + (size / 1.5));
         }
     }
 
