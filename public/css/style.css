@@ -6,3 +6,29 @@
 .img {
     display: none;
 }
+
+.topBar {
+    width: 100%;
+    background-color: grey;
+    position: absolute;
+    top: 0;
+}
+
+.topBar-resources {
+    display: table;
+    margin: 0 auto;
+}
+
+.debug {
+    background-color: #00000088;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+}
+
+.debug-label {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8em;
+}

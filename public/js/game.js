@@ -10,6 +10,9 @@ class Game
     updateTime = 0
     renderTime = 0
 
+    updateTag = null
+    renderTag = null
+
     constructor()
     {
         this.map = new MapLoader().load()
@@ -19,6 +22,9 @@ class Game
         canvas.width = document.body.clientWidth
         canvas.height = document.body.clientHeight
         this.grid = new Grid(canvas, this.map)
+
+        this.updateTag = document.getElementById('debug.update')
+        this.renderTag = document.getElementById('debug.render')
     }
 
     loop(timestamp)
@@ -38,7 +44,8 @@ class Game
             const end2 = performance.now()
             this.renderTime += end2 - start2
 
-            console.log('update: ' + (this.updateTime / this.stepCount).toFixed(2) + '\nrender: ' + (this.renderTime / this.stepCount).toFixed(2))
+            this.updateTag.innerHTML = (this.updateTime / this.stepCount).toFixed(1) + ' ms'
+            this.renderTag.innerHTML = (this.renderTime / this.stepCount).toFixed(1) + ' ms'
         }
 
         this.lastTimestamp = timestamp
