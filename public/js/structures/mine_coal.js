@@ -3,7 +3,7 @@ class MineCoal extends Structure
     static MINING_TIME = 1000
 
     accumulatedTime = 0
-    buffer = 0
+    buffer = null
 
     // Health: 150
     // Energy consumption: 15
@@ -15,7 +15,7 @@ class MineCoal extends Structure
 
     update(delta)
     {
-        if (this.buffer === 0)
+        if (this.buffer === null)
         {
             this.accumulatedTime += delta
 
@@ -23,13 +23,15 @@ class MineCoal extends Structure
             {
                 this.accumulatedTime -= MineCoal.MINING_TIME
 
-                if (this.directionalStructure && this.directionalStructure.acceptResource(Resource.TYPE_COAL, Direction.opposite(this.direction)))
+                const resource = Resource.coal()
+
+                if (this.directionalStructure && this.directionalStructure.acceptResource(resource, Direction.opposite(this.direction)))
                 {
-                    this.buffer = 0
+                    this.buffer = null
                 }
                 else
                 {
-                    this.buffer = 1
+                    this.buffer = resource
                 }
             }
         }

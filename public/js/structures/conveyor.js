@@ -1,5 +1,9 @@
 class Conveyor extends Structure
 {
+    resources = []
+
+    static MAX_ITEMS = 4
+
     constructor(x, y, direction)
     {
         super(x, y, Structure.TYPE_CONNECTION_CONVEYOR, direction)
@@ -9,8 +13,15 @@ class Conveyor extends Structure
     {
     }
 
-    acceptResource(type, fromDirection)
+    acceptResource(resource, fromDirection)
     {
-        return (type === Resource.TYPE_COAL) && (Direction.opposite(this.direction) === fromDirection)
+        const accepted = (this.resources.length < Conveyor.MAX_ITEMS) && (this.direction !== fromDirection)
+
+        if (accepted)
+        {
+            this.resources.unshift(resource)
+        }
+
+        return accepted
     }
 }

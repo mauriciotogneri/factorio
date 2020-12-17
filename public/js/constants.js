@@ -27,11 +27,6 @@ class Direction
     }
 }
 
-class Resource
-{
-    static COAL = 'coal'
-}
-
 class MapVersion
 {
     static V1 = '1'
