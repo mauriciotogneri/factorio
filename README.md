@@ -44,6 +44,7 @@
 
 ### Connections
 * conveyor belt (level 1: moves one element/click, level 2: moves 2 elements/click) They are bidirectional
+* fast conveyor belt
 * junction: only allows resources to continue moving in the same direction
 * router: distribute items to all three other directions (alternating)
 * sorter: selects a list of objects that will allow to pass in the same direction they came. all other resources will go the two other ways (alternating)

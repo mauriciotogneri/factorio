@@ -99,8 +99,29 @@ class Grid
             this.canvas.drawImage(image, x, y, size, size)
         }
 
-        if (structure.resources)
+        if (structure.isConveyor())
         {
+            const resourceSize = size / 3;
+            const resourceX = (size / 2) - (resourceSize / 2)
+            const resourceY = (size / 2) - (resourceSize / 2)
+
+            for (let i = 0; i < structure.resources.length; i++)
+            {
+                let resource = structure.resources[i]
+                let progress = structure.progress[i]
+
+                let resourceImage = document.getElementById('img.resource.ore.' + resource.type)
+
+                if ((structure.direction === Direction.LEFT) || (structure.direction === Direction.RIGHT))
+                {
+                    this.canvas.drawImage(resourceImage, x + (size * progress) - resourceSize, y + resourceY, resourceSize, resourceSize)
+                }
+                else if ((structure.direction === Direction.UP) || (structure.direction === Direction.DOWN))
+                {
+                    this.canvas.drawImage(resourceImage, x + resourceX, y, resourceSize, resourceSize)
+                }
+            }
+
             this.canvas.fillStyle = 'red';
             this.canvas.font = '20px Courier';
             this.canvas.fillText(structure.resources.length, x + (size / 3), y + (size / 1.5));

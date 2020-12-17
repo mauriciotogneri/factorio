@@ -51,6 +51,11 @@ class Structure
         return false
     }
 
+    isConveyor()
+    {
+        return false
+    }
+
     moveResource(resource)
     {
         return (this.directionalStructure && this.directionalStructure.acceptResource(resource, Direction.opposite(this.direction)))

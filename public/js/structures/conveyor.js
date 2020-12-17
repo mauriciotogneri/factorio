@@ -15,9 +15,9 @@ class Conveyor extends Structure
     {
         for (let i = 0; i < this.resources.length; i++)
         {
-            this.progress[i] += delta
+            this.progress[i] += (delta / Conveyor.MAX_TIME)
 
-            if (this.progress[i] >= Conveyor.MAX_TIME)
+            if (this.progress[i] >= 1)
             {
                 let resource = this.resources[i]
 
@@ -41,5 +41,10 @@ class Conveyor extends Structure
         }
 
         return accepted
+    }
+
+    isConveyor()
+    {
+        return true
     }
 }
