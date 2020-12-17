@@ -7,7 +7,6 @@ class Conveyor extends Structure
 
     update(delta)
     {
-        console.log(delta)
     }
 
     acceptResource(type, fromDirection)

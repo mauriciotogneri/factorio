@@ -7,6 +7,5 @@ class Headquarters extends Structure
 
     update(delta)
     {
-        console.log(delta)
     }
 }

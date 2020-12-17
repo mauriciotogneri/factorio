@@ -6,6 +6,10 @@ class Game
     grid = null
     lastTimestamp = 0
 
+    stepCount = 0
+    updateTime = 0
+    renderTime = 0
+
     constructor()
     {
         this.map = new MapLoader().load()
@@ -21,16 +25,20 @@ class Game
     {
         if (this.lastTimestamp > 0)
         {
+            this.stepCount++
+
             const start1 = performance.now()
             const delta = parseFloat((timestamp - this.lastTimestamp).toFixed(2))
             this.map.update(delta)
             const end1 = performance.now()
-            console.log('update: ' + (end1 - start1).toFixed(2))
+            this.updateTime += end1 - start1
 
             const start2 = performance.now()
             this.grid.render()
             const end2 = performance.now()
-            console.log('render: ' + (end2 - start2).toFixed(2))
+            this.renderTime += end2 - start2
+
+            console.log('update: ' + (this.updateTime / this.stepCount).toFixed(2) + '\nrender: ' + (this.renderTime / this.stepCount).toFixed(2))
         }
 
         this.lastTimestamp = timestamp

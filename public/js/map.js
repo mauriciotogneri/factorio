@@ -34,8 +34,6 @@ class Map
                 structure.setDirectionalStructure(neighbor)
             }
         }
-
-        console.log()
     }
 
     neighborAt(direction, x, y)
