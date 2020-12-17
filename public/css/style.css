@@ -24,15 +24,15 @@ html, body {
 }
 
 .topBar-resources-block {
-    margin-left: 24px;
-    margin-right: 24px;
+    margin-left: 25px;
+    margin-right: 25px;
     display: flex;
     align-items: center;
 }
 
 .topBar-resources-icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     margin-right: 5px;
 }
 
