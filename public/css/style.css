@@ -3,21 +3,32 @@
     padding: 0;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* =============================================== */
+
 .img {
     display: none;
 }
 
-.topBar {
-    width: 100%;
-    background-color: grey;
-    position: absolute;
-    top: 0;
+/* =============================================== */
+
+.topBar{
+    background-color: #222222;
+    padding: 5px;
 }
 
 .topBar-resources {
     display: table;
     margin: 0 auto;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
 }
+
+/* =============================================== */
 
 .debug {
     background-color: #00000088;

@@ -18,9 +18,11 @@ class Game
         this.map = new MapLoader().load()
         this.map.connect()
 
+        const topBar = document.getElementById('topBar')
+
         const canvas = document.getElementById('canvas')
         canvas.width = document.body.clientWidth
-        canvas.height = document.body.clientHeight
+        canvas.height = document.body.clientHeight - topBar.clientHeight
         this.grid = new Grid(canvas, this.map)
 
         this.updateTag = document.getElementById('debug.update')
