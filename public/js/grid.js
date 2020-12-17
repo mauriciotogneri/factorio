@@ -102,8 +102,7 @@ class Grid
         if (structure.isConveyor())
         {
             const resourceSize = size / 3;
-            const resourceX = (size / 2) - (resourceSize / 2)
-            const resourceY = (size / 2) - (resourceSize / 2)
+            const resourceOffset = (size / 2) - (resourceSize / 2)
 
             for (let i = 0; i < structure.resources.length; i++)
             {
@@ -112,13 +111,21 @@ class Grid
 
                 let resourceImage = document.getElementById('img.resource.ore.' + resource.type)
 
-                if ((structure.direction === Direction.LEFT) || (structure.direction === Direction.RIGHT))
+                if (structure.direction === Direction.RIGHT)
                 {
-                    this.canvas.drawImage(resourceImage, x + (size * progress) - resourceSize, y + resourceY, resourceSize, resourceSize)
+                    this.canvas.drawImage(resourceImage, x + (size * progress) - resourceSize, y + resourceOffset, resourceSize, resourceSize)
                 }
-                else if ((structure.direction === Direction.UP) || (structure.direction === Direction.DOWN))
+                else if (structure.direction === Direction.LEFT)
                 {
-                    this.canvas.drawImage(resourceImage, x + resourceX, y, resourceSize, resourceSize)
+                    this.canvas.drawImage(resourceImage, x - (size * progress) + size, y + resourceOffset, resourceSize, resourceSize)
+                }
+                else if (structure.direction === Direction.UP)
+                {
+                    this.canvas.drawImage(resourceImage, x + resourceOffset, y - (size * progress) + size, resourceSize, resourceSize)
+                }
+                else if (structure.direction === Direction.DOWN)
+                {
+                    this.canvas.drawImage(resourceImage, x + resourceOffset, y + (size * progress) - resourceSize, resourceSize, resourceSize)
                 }
             }
 

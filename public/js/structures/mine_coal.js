@@ -25,14 +25,14 @@ class MineCoal extends Structure
 
                 const resource = Resource.coal()
 
-                if (this.moveResource(resource))
+                /*if (this.moveResource(resource))
                 {
                     this.buffer = null
                 }
                 else
                 {
                     this.buffer = resource
-                }
+                }*/
             }
         }
     }

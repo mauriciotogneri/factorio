@@ -1,7 +1,7 @@
 class Conveyor extends Structure
 {
-    resources = []
-    progress = []
+    resources = [Resource.coal()]
+    progress = [1]
 
     static MAX_ITEMS = 4
     static MAX_TIME = 1000
@@ -13,7 +13,7 @@ class Conveyor extends Structure
 
     update(delta)
     {
-        for (let i = 0; i < this.resources.length; i++)
+        /*for (let i = 0; i < this.resources.length; i++)
         {
             this.progress[i] += (delta / Conveyor.MAX_TIME)
 
@@ -30,7 +30,7 @@ class Conveyor extends Structure
                     this.progress.shift()
                 }
             }
-        }
+        }*/
     }
 
     acceptResource(resource, fromDirection)
