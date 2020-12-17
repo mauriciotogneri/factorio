@@ -51,6 +51,11 @@ class Structure
         return false
     }
 
+    moveResource(resource)
+    {
+        return (this.directionalStructure && this.directionalStructure.acceptResource(resource, Direction.opposite(this.direction)))
+    }
+
     setDirectionalStructure(structure)
     {
         if (this.type == Structure.TYPE_CONNECTION_CONVEYOR)

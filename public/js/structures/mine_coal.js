@@ -25,7 +25,7 @@ class MineCoal extends Structure
 
                 const resource = Resource.coal()
 
-                if (this.directionalStructure && this.directionalStructure.acceptResource(resource, Direction.opposite(this.direction)))
+                if (this.moveResource(resource))
                 {
                     this.buffer = null
                 }
