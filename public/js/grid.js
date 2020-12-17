@@ -101,7 +101,7 @@ class Grid
 
         if (structure.isConveyor())
         {
-            const resourceSize = size / 3;
+            const resourceSize = size / Conveyor.MAX_ITEMS;
             const resourceOffset = (size / 2) - (resourceSize / 2)
 
             for (let i = 0; i < structure.resources.length; i++)
