@@ -128,3 +128,7 @@ https://factoriocheatsheet.com
 https://davemcw.com/factorio/tech-tree
 http://doomeer.com/factorio
 https://kirkmcdonald.github.io
+
+----------------------------------------------------------------------------------------------------
+
+console.dir(object)
