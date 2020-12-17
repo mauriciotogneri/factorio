@@ -17,14 +17,29 @@ html, body {
 /* =============================================== */
 
 .topBar{
+    width: 100%;
     background-color: #222222;
+    display: flex;
     padding: 5px;
+    justify-content: center;
 }
 
-.topBar-resources {
-    display: table;
-    margin: 0 auto;
+.topBar-resources-block {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.topBar-resources-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.topBar-resources-label {
     color: white;
+    padding-top: 3px;
     font-family: 'Courier New', Courier, monospace;
 }
 
