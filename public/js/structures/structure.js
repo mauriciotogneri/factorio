@@ -4,6 +4,7 @@ class Structure
     y = 0
     direction = ''
     type = ''
+    subtype = ''
     directionalStructure = null
 
     static TYPE_HEADQUARTERS = 'structure.headquarters' // in
@@ -63,16 +64,80 @@ class Structure
 
     setDirectionalStructure(structure)
     {
-        if (this.type == Structure.TYPE_CONNECTION_CONVEYOR)
-        {
-            this.directionalStructure = structure
-        }
-        else if ((this.type == Structure.TYPE_MINE_COAL) ||
+        if ((this.type == Structure.TYPE_CONNECTION_CONVEYOR) ||
+            (this.type == Structure.TYPE_MINE_COAL) ||
             (this.type == Structure.TYPE_MINE_IRON) ||
             (this.type == Structure.TYPE_MINE_COPPER) ||
             (this.type == Structure.TYPE_MINE_STONE))
         {
             this.directionalStructure = structure
+        }
+    }
+
+    setNeighbors(structureUp, structureDown, structureLeft, structureRight)
+    {
+        if (this.type === Structure.TYPE_CONNECTION_CONVEYOR)
+        {
+            if (this.direction == Direction.UP)
+            {
+                if (structureRight && !structureLeft && !structureDown)
+                {
+                    this.subtype = '1b'
+                }
+                else if (!structureRight && structureLeft && !structureDown)
+                {
+                    this.subtype = '1c'
+                }
+                else
+                {
+                    this.subtype = '1a'
+                }
+            }
+            else if (this.direction == Direction.DOWN)
+            {
+                if (!structureRight && structureLeft && !structureUp)
+                {
+                    this.subtype = '1b'
+                }
+                else if (structureRight && !structureLeft && !structureUp)
+                {
+                    this.subtype = '1c'
+                }
+                else
+                {
+                    this.subtype = '1a'
+                }
+            }
+            else if (this.direction == Direction.LEFT)
+            {
+                if (structureUp && !structureDown && !structureRight)
+                {
+                    this.subtype = '1b'
+                }
+                else if (!structureUp && structureDown && !structureRight)
+                {
+                    this.subtype = '1c'
+                }
+                else
+                {
+                    this.subtype = '1a'
+                }
+            }
+            else if (this.direction == Direction.RIGHT)
+            {
+                if (!structureUp && structureDown && !structureLeft)
+                {
+                    this.subtype = '1b'
+                }
+                else if (structureUp && !structureDown && !structureLeft)
+                {
+                    this.subtype = '1c'
+                }
+                else
+                {
+                    this.subtype = '1a'
+                }
+            }
         }
     }
 

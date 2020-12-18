@@ -95,7 +95,7 @@ class Grid
         const y = this.tileY(structure)
         const size = this.cellSize
         const angle = structure.angle() * Math.PI / 180
-        const image = document.getElementById('img.' + structure.type)
+        const image = document.getElementById('img.' + structure.type + structure.subtype)
 
         if (angle !== 0)
         {

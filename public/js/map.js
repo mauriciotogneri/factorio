@@ -27,12 +27,14 @@ class Map
     {
         for (let structure of this.structures)
         {
-            let neighbor = this.neighborAt(structure.direction, structure.x, structure.y)
+            let neighborDirection = this.neighborAt(structure.direction, structure.x, structure.y)
+            structure.setDirectionalStructure(neighborDirection)
 
-            if (neighbor)
-            {
-                structure.setDirectionalStructure(neighbor)
-            }
+            let neighborUp = this.neighborAt(Direction.UP, structure.x, structure.y)
+            let neighborDown = this.neighborAt(Direction.DOWN, structure.x, structure.y)
+            let neighborLeft = this.neighborAt(Direction.LEFT, structure.x, structure.y)
+            let neighborRight = this.neighborAt(Direction.RIGHT, structure.x, structure.y)
+            structure.setNeighbors(neighborUp, neighborDown, neighborLeft, neighborRight)
         }
     }
 
