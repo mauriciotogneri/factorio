@@ -6,6 +6,7 @@
 * structures can be improved: the bigger the level, the more efficient/powerful but the more energy they require
 * save automatically after X seconds
 * move camera with ASDW
+* save matches in Firebase
 
 ## Resources
 
