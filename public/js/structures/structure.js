@@ -64,11 +64,11 @@ class Structure
 
     setDirectionalStructure(structure)
     {
-        if ((this.type == Structure.TYPE_CONNECTION_CONVEYOR) ||
-            (this.type == Structure.TYPE_MINE_COAL) ||
-            (this.type == Structure.TYPE_MINE_IRON) ||
-            (this.type == Structure.TYPE_MINE_COPPER) ||
-            (this.type == Structure.TYPE_MINE_STONE))
+        if ((this.type === Structure.TYPE_CONNECTION_CONVEYOR) ||
+            (this.type === Structure.TYPE_MINE_COAL) ||
+            (this.type === Structure.TYPE_MINE_IRON) ||
+            (this.type === Structure.TYPE_MINE_COPPER) ||
+            (this.type === Structure.TYPE_MINE_STONE))
         {
             this.directionalStructure = structure
         }
@@ -79,7 +79,7 @@ class Structure
     {
         if (this.type === Structure.TYPE_CONNECTION_CONVEYOR)
         {
-            if (this.direction == Direction.UP)
+            if (this.direction === Direction.UP)
             {
                 if (structureRight && !structureLeft && !structureDown)
                 {
@@ -94,7 +94,7 @@ class Structure
                     this.subtype = '1a'
                 }
             }
-            else if (this.direction == Direction.DOWN)
+            else if (this.direction === Direction.DOWN)
             {
                 if (!structureRight && structureLeft && !structureUp)
                 {
@@ -109,7 +109,7 @@ class Structure
                     this.subtype = '1a'
                 }
             }
-            else if (this.direction == Direction.LEFT)
+            else if (this.direction === Direction.LEFT)
             {
                 if (structureUp && !structureDown && !structureRight)
                 {
@@ -124,7 +124,7 @@ class Structure
                     this.subtype = '1a'
                 }
             }
-            else if (this.direction == Direction.RIGHT)
+            else if (this.direction === Direction.RIGHT)
             {
                 if (!structureUp && structureDown && !structureLeft)
                 {
