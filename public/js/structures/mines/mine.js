@@ -1,16 +1,17 @@
-class MineCoal extends Structure
+class Mine extends Structure
 {
-    static MINING_TIME = 1000
-
+    miningTime = 0
     accumulatedTime = 0
     buffer = null
 
     // Health: 150
     // Energy consumption: 15
 
-    constructor(x, y, direction)
+    constructor(x, y, type, direction, miningTime)
     {
-        super(x, y, Structure.TYPE_MINE_COAL, direction)
+        super(x, y, type, direction)
+
+        this.miningTime = miningTime
     }
 
     update(delta)
@@ -19,9 +20,9 @@ class MineCoal extends Structure
         {
             this.accumulatedTime += delta
 
-            if (this.accumulatedTime >= MineCoal.MINING_TIME)
+            if (this.accumulatedTime >= this.miningTime)
             {
-                this.accumulatedTime -= MineCoal.MINING_TIME
+                this.accumulatedTime -= this.miningTime
 
                 const resource = Resource.coal()
 
