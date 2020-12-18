@@ -46,7 +46,18 @@ class Grid
 
         this.map.structures.forEach(structure =>
         {
-            this.renderStructure(structure)
+            if (structure.isConveyor())
+            {
+                this.renderStructure(structure)
+            }
+        })
+
+        this.map.structures.forEach(structure =>
+        {
+            if (!structure.isConveyor())
+            {
+                this.renderStructure(structure)
+            }
         })
     }
 
