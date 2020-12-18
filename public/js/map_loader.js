@@ -61,6 +61,30 @@ class MapLoader
                     json.direction
                 )
             }
+            else if (json.type === Structure.TYPE_MINE_COPPER)
+            {
+                return new MineCopper(
+                    json.x,
+                    json.y,
+                    json.direction
+                )
+            }
+            else if (json.type === Structure.TYPE_MINE_IRON)
+            {
+                return new MineIron(
+                    json.x,
+                    json.y,
+                    json.direction
+                )
+            }
+            else if (json.type === Structure.TYPE_MINE_STONE)
+            {
+                return new MineStone(
+                    json.x,
+                    json.y,
+                    json.direction
+                )
+            }
             else if (json.type === Structure.TYPE_CONNECTION_CONVEYOR)
             {
                 return new Conveyor(
@@ -121,7 +145,13 @@ class MapLoader
                 { x: 21, y: 5, type: Patch.TYPE_STONE, value: 1000 },
             ],
             structures: [
+                { x: 3, y: 4, type: Structure.TYPE_HEADQUARTERS, direction: Direction.UP },
+
                 { x: 2, y: 7, type: Structure.TYPE_MINE_COAL, direction: Direction.RIGHT },
+                { x: 5, y: 15, type: Structure.TYPE_MINE_COPPER, direction: Direction.UP },
+                { x: 23, y: 13, type: Structure.TYPE_MINE_IRON, direction: Direction.LEFT },
+                { x: 20, y: 5, type: Structure.TYPE_MINE_STONE, direction: Direction.DOWN },
+
                 { x: 3, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
                 { x: 4, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
                 { x: 5, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
@@ -137,7 +167,6 @@ class MapLoader
                 { x: 3, y: 1, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.DOWN },
                 { x: 3, y: 2, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.DOWN },
                 { x: 3, y: 3, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.DOWN },
-                { x: 3, y: 4, type: Structure.TYPE_HEADQUARTERS, direction: Direction.UP }
             ]
         }
 

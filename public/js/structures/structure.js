@@ -21,8 +21,8 @@ class Structure
     static TYPE_FACTORY_BATTERY = 'structure.factory.battery' // in | out
 
     static TYPE_MINE_COAL = 'structure.mine.coal' // out
-    static TYPE_MINE_IRON = 'structure.mine.iron' // out
     static TYPE_MINE_COPPER = 'structure.mine.copper' // out
+    static TYPE_MINE_IRON = 'structure.mine.iron' // out
     static TYPE_MINE_STONE = 'structure.mine.stone' // out
 
     static TYPE_TURRET_LIGHT = 'structure.turret.light' // in
