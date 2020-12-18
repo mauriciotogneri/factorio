@@ -74,6 +74,7 @@ class Structure
         }
     }
 
+    // TODO(momo): fill with other cases
     setNeighbors(structureUp, structureDown, structureLeft, structureRight)
     {
         if (this.type === Structure.TYPE_CONNECTION_CONVEYOR)
