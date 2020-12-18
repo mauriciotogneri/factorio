@@ -97,7 +97,7 @@ class Grid
         const angle = structure.angle() * Math.PI / 180
         const image = document.getElementById('img.' + structure.type + structure.subtype)
 
-        this.renderImage(image, angle, x, y, size)
+        this.renderImage(image, angle, x, y, size, size)
 
         if (structure.isConveyor())
         {
@@ -113,19 +113,19 @@ class Grid
 
                 if (structure.direction === Direction.RIGHT)
                 {
-                    this.canvas.drawImage(resourceImage, x + (size * progress) - resourceSize, y + resourceOffset, resourceSize, resourceSize)
+                    this.renderImage(resourceImage, angle, x + (size * progress) - resourceSize, y + resourceOffset, resourceSize, resourceSize)
                 }
                 else if (structure.direction === Direction.LEFT)
                 {
-                    this.canvas.drawImage(resourceImage, x - (size * progress) + size, y + resourceOffset, resourceSize, resourceSize)
+                    this.renderImage(resourceImage, angle, x - (size * progress) + size, y + resourceOffset, resourceSize, resourceSize)
                 }
                 else if (structure.direction === Direction.UP)
                 {
-                    this.canvas.drawImage(resourceImage, x + resourceOffset, y - (size * progress) + size, resourceSize, resourceSize)
+                    this.renderImage(resourceImage, angle, x + resourceOffset, y - (size * progress) + size, resourceSize, resourceSize)
                 }
                 else if (structure.direction === Direction.DOWN)
                 {
-                    this.canvas.drawImage(resourceImage, x + resourceOffset, y + (size * progress) - resourceSize, resourceSize, resourceSize)
+                    this.renderImage(resourceImage, angle, x + resourceOffset, y + (size * progress) - resourceSize, resourceSize, resourceSize)
                 }
             }
 
@@ -135,19 +135,19 @@ class Grid
         }
     }
 
-    renderImage(image, angle, x, y, size)
+    renderImage(image, angle, x, y, width, height)
     {
         if (angle !== 0)
         {
             this.canvas.save()
-            this.canvas.translate(x + (size / 2), y + (size / 2))
+            this.canvas.translate(x + (width / 2), y + (height / 2))
             this.canvas.rotate(angle)
-            this.canvas.drawImage(image, -size / 2, -size / 2, size, size)
+            this.canvas.drawImage(image, -width / 2, -height / 2, width, height)
             this.canvas.restore()
         }
         else
         {
-            this.canvas.drawImage(image, x, y, size, size)
+            this.canvas.drawImage(image, x, y, width, height)
         }
     }
 
