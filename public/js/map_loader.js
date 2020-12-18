@@ -97,7 +97,28 @@ class MapLoader
                 { x: 1, y: 7, type: Patch.TYPE_COAL, value: 1000 },
                 { x: 2, y: 7, type: Patch.TYPE_COAL, value: 1000 },
                 { x: 1, y: 8, type: Patch.TYPE_COAL, value: 1000 },
-                { x: 2, y: 8, type: Patch.TYPE_COAL, value: 1000 }
+                { x: 2, y: 8, type: Patch.TYPE_COAL, value: 1000 },
+
+                { x: 4, y: 15, type: Patch.TYPE_COPPER, value: 1000 },
+                { x: 5, y: 15, type: Patch.TYPE_COPPER, value: 1000 },
+                { x: 4, y: 16, type: Patch.TYPE_COPPER, value: 1000 },
+                { x: 5, y: 16, type: Patch.TYPE_COPPER, value: 1000 },
+                { x: 4, y: 17, type: Patch.TYPE_COPPER, value: 1000 },
+                { x: 5, y: 17, type: Patch.TYPE_COPPER, value: 1000 },
+
+                { x: 23, y: 12, type: Patch.TYPE_IRON, value: 1000 },
+                { x: 24, y: 12, type: Patch.TYPE_IRON, value: 1000 },
+                { x: 23, y: 13, type: Patch.TYPE_IRON, value: 1000 },
+                { x: 24, y: 13, type: Patch.TYPE_IRON, value: 1000 },
+                { x: 23, y: 14, type: Patch.TYPE_IRON, value: 1000 },
+                { x: 24, y: 14, type: Patch.TYPE_IRON, value: 1000 },
+
+                { x: 20, y: 3, type: Patch.TYPE_STONE, value: 1000 },
+                { x: 21, y: 3, type: Patch.TYPE_STONE, value: 1000 },
+                { x: 20, y: 4, type: Patch.TYPE_STONE, value: 1000 },
+                { x: 21, y: 4, type: Patch.TYPE_STONE, value: 1000 },
+                { x: 20, y: 5, type: Patch.TYPE_STONE, value: 1000 },
+                { x: 21, y: 5, type: Patch.TYPE_STONE, value: 1000 },
             ],
             structures: [
                 { x: 2, y: 7, type: Structure.TYPE_MINE_COAL, direction: Direction.RIGHT },

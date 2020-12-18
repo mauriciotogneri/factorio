@@ -6,6 +6,9 @@ class Patch
     value = 0
 
     static TYPE_COAL = 'patch.coal'
+    static TYPE_COPPER = 'patch.copper'
+    static TYPE_IRON = 'patch.iron'
+    static TYPE_STONE = 'patch.stone'
 
     constructor(x, y, type, value)
     {
