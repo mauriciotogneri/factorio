@@ -145,7 +145,7 @@ class MapLoader
                 { x: 21, y: 5, type: Patch.TYPE_STONE, value: 1000 },
             ],
             structures: [
-                { x: 3, y: 4, type: Structure.TYPE_HEADQUARTERS, direction: Direction.UP },
+                { x: 14, y: 10, type: Structure.TYPE_HEADQUARTERS, direction: Direction.UP },
 
                 { x: 2, y: 7, type: Structure.TYPE_MINE_COAL, direction: Direction.RIGHT },
                 { x: 5, y: 15, type: Structure.TYPE_MINE_COPPER, direction: Direction.UP },
@@ -155,18 +155,8 @@ class MapLoader
                 { x: 3, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
                 { x: 4, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
                 { x: 5, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
-                { x: 6, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.UP },
-                { x: 6, y: 6, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.UP },
-                { x: 6, y: 5, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.UP },
-                { x: 6, y: 4, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.UP },
-                { x: 6, y: 3, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.UP },
-                { x: 6, y: 2, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.UP },
-                { x: 6, y: 1, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.LEFT },
-                { x: 5, y: 1, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.LEFT },
-                { x: 4, y: 1, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.LEFT },
-                { x: 3, y: 1, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.DOWN },
-                { x: 3, y: 2, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.DOWN },
-                { x: 3, y: 3, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.DOWN },
+                { x: 6, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
+                { x: 7, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.DOWN },
             ]
         }
 
