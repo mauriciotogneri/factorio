@@ -24,7 +24,7 @@ class Mine extends Structure
             {
                 this.accumulatedTime -= this.miningTime
 
-                const resource = Resource.coal()
+                const resource = this.createResource()
 
                 if (this.moveResource(resource))
                 {
@@ -35,6 +35,24 @@ class Mine extends Structure
                     this.buffer = resource
                 }
             }
+        }
+    }
+
+    createResource()
+    {
+        switch (this.type)
+        {
+            case Structure.TYPE_MINE_COAL:
+                return Resource.coal()
+
+            case Structure.TYPE_MINE_COPPER:
+                return Resource.copper()
+
+            case Structure.TYPE_MINE_IRON:
+                return Resource.iron()
+
+            case Structure.TYPE_MINE_STONE:
+                return Resource.stone()
         }
     }
 }

@@ -157,6 +157,19 @@ class MapLoader
                 { x: 5, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
                 { x: 6, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
                 { x: 7, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.DOWN },
+                { x: 7, y: 8, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.DOWN },
+                { x: 7, y: 9, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.DOWN },
+                { x: 7, y: 10, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
+                { x: 8, y: 10, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
+                { x: 9, y: 10, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
+                { x: 10, y: 10, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
+                { x: 11, y: 10, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
+                { x: 12, y: 10, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
+                { x: 13, y: 10, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.RIGHT },
+
+                { x: 20, y: 6, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.DOWN },
+                { x: 20, y: 7, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.DOWN },
+                { x: 20, y: 8, type: Structure.TYPE_CONNECTION_CONVEYOR, direction: Direction.LEFT },
             ]
         }
 
